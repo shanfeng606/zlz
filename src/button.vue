@@ -24,14 +24,14 @@ export default {
       type: String,
       default: "left",
       validator(value) {
-        return !(value !== "left" && value !== "right");
-      },
-    },
-  },
+        return value === "left" || value === "right";
+      }
+    }
+  }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @keyframes spin {
   0% {
     transform: rotate(0deg);

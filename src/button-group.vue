@@ -1,9 +1,7 @@
 <template>
-<div class="g-button-group">
-<slot></slot>
-  
+    <div class="g-button-group">
+    <slot></slot>
 </template>
-
 <script>
 export default {
     mounted(){

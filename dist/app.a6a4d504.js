@@ -12459,7 +12459,7 @@ var _default = {
       type: String,
       default: "left",
       validator: function validator(value) {
-        return !(value !== "left" && value !== "right");
+        return value === "left" || value === "right";
       }
     }
   }
@@ -12513,7 +12513,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-2dd9c3",
             functional: undefined
           };
         })());
@@ -12551,8 +12551,6 @@ exports.default = void 0;
 //
 //
 //
-//
-//
 var _default = {
   props: ["name"]
 };
@@ -12569,10 +12567,8 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("svg", { staticClass: "g-icon" }, [
-      _c("use", { attrs: { "xlink:href": "#i-" + _vm.name } })
-    ])
+  return _c("svg", { staticClass: "g-icon" }, [
+    _c("use", { attrs: { "xlink:href": "#i-" + _vm.name } })
   ])
 }
 var staticRenderFns = []
@@ -12622,8 +12618,6 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-//
-//
 //
 //
 //
@@ -23821,57 +23815,76 @@ var expect = _chai.default.expect;
   expect(_href).to.eq("#i-jiazaizhong");
   button.$el.remove();
   button.$destroy();
-} // {
-//     const div = document.createElement('div')
-//     document.body.appendChild(div)
-//     const Constructor = Vue.extend(Button)
-//     const vm = new Constructor({
-//       propsData: {
-//         icon: 'shezhi'
-//       }
-//     })
-//     vm.$mount(div)
-//     let svg = vm.$el.querySelector('svg')
-//     let {order} = window.getComputedStyle(svg)
-//     expect(order).to.eq('1')
-//     vm.$el.remove()
-//     vm.$destroy()
-//   }
-// {
-//   const div = document.createElement("div");
-//   document.body.appendChild(div);
-//   const Constructor = Vue.extend(Button);
-//   const vm = new Constructor({
-//     propsData: {
-//       icon: "shezhi",
-//       iconPosition: "right",
-//     },
-//   });
-//   vm.$mount(div);
-//   let svg = vm.$el.querySelector("svg");
-//   let { order } = window.getComputedStyle(svg);
-//   expect(order).to.eq("2");
-//   vm.$el.remove();
-//   vm.$destroy();
-// }
-
+}
 {
-  //mock
+  var div = document.createElement('div');
+  document.body.appendChild(div);
+
   var _Constructor2 = _vue.default.extend(_button2.default);
 
   var _vm = new _Constructor2({
+    propsData: {
+      icon: 'shezhi'
+    }
+  });
+
+  _vm.$mount(div);
+
+  var svg = _vm.$el.querySelector('svg');
+
+  var _window$getComputedSt = window.getComputedStyle(svg),
+      order = _window$getComputedSt.order;
+
+  expect(order).to.eq('1');
+
+  _vm.$el.remove();
+
+  _vm.$destroy();
+}
+{
+  var _div = document.createElement("div");
+
+  document.body.appendChild(_div);
+
+  var _Constructor3 = _vue.default.extend(_button2.default);
+
+  var _vm2 = new _Constructor3({
+    propsData: {
+      icon: "shezhi",
+      iconPosition: "right"
+    }
+  });
+
+  _vm2.$mount(_div);
+
+  var _svg = _vm2.$el.querySelector("svg");
+
+  var _window$getComputedSt2 = window.getComputedStyle(_svg),
+      _order = _window$getComputedSt2.order;
+
+  expect(_order).to.eq("2");
+
+  _vm2.$el.remove();
+
+  _vm2.$destroy();
+}
+{
+  //mock
+  var _Constructor4 = _vue.default.extend(_button2.default);
+
+  var _vm3 = new _Constructor4({
     propsData: {
       icon: "shezhi"
     }
   });
 
-  _vm.$mount();
+  _vm3.$mount();
 
   var spy = _chai.default.spy(function () {});
 
-  _vm.$on('click', spy);
+  _vm3.$on('click', spy);
 
-  var _button = _vm.$el;
+  var _button = _vm3.$el;
 
   _button.click();
 

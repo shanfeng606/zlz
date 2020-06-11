@@ -51,39 +51,39 @@ const expect = chai.expect;
   button.$el.remove()
   button.$destroy()
 }
-// {
-//     const div = document.createElement('div')
-//     document.body.appendChild(div)
-//     const Constructor = Vue.extend(Button)
-//     const vm = new Constructor({
-//       propsData: {
-//         icon: 'shezhi'
-//       }
-//     })
-//     vm.$mount(div)
-//     let svg = vm.$el.querySelector('svg')
-//     let {order} = window.getComputedStyle(svg)
-//     expect(order).to.eq('1')
-//     vm.$el.remove()
-//     vm.$destroy()
-//   }
-// {
-//   const div = document.createElement("div");
-//   document.body.appendChild(div);
-//   const Constructor = Vue.extend(Button);
-//   const vm = new Constructor({
-//     propsData: {
-//       icon: "shezhi",
-//       iconPosition: "right",
-//     },
-//   });
-//   vm.$mount(div);
-//   let svg = vm.$el.querySelector("svg");
-//   let { order } = window.getComputedStyle(svg);
-//   expect(order).to.eq("2");
-//   vm.$el.remove();
-//   vm.$destroy();
-// }
+{
+    const div = document.createElement('div')
+    document.body.appendChild(div)
+    const Constructor = Vue.extend(Button)
+    const vm = new Constructor({
+      propsData: {
+        icon: 'shezhi'
+      }
+    })
+    vm.$mount(div)
+    let svg = vm.$el.querySelector('svg')
+    let {order} = window.getComputedStyle(svg)
+    expect(order).to.eq('1')
+    vm.$el.remove()
+    vm.$destroy()
+}
+{
+  const div = document.createElement("div");
+  document.body.appendChild(div);
+  const Constructor = Vue.extend(Button);
+  const vm = new Constructor({
+    propsData: {
+      icon: "shezhi",
+      iconPosition: "right",
+    },
+  });
+  vm.$mount(div);
+  let svg = vm.$el.querySelector("svg");
+  let { order } = window.getComputedStyle(svg);
+  expect(order).to.eq("2");
+  vm.$el.remove();
+  vm.$destroy();
+}
 {
   //mock
   const Constructor = Vue.extend(Button);
