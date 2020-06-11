@@ -28,17 +28,18 @@
   <link rel="stylesheet" href="/app.a6a4d504.css"></head>
   <body>
     <div id="app">
-      <g-button>
+      <g-button :loading="loading1" @click="loading1=!loading1">
         按钮
       </g-button>
-      <g-button icon="shezhi">
+      <g-button icon="shezhi" :loading="loading2" @click="loading2=!loading2">
         按钮
-    </g-button>
-    <g-button icon="shezhi" icon-position="right">
+      </g-button>
+      <g-button icon="shezhi" icon-position="right" :loading="loading3" @click="loading3=!loading3">
         按钮
-    </g-button>
+      </g-button>
+      
     </div>
     <script src="/app.a6a4d504.js"></script>
-    <script src="//at.alicdn.com/t/font_1878994_zp4c46agj7.js"></script>
+    <script src="//at.alicdn.com/t/font_1878994_ydum8ujl7ki.js"></script>
   </body>
 </html>
