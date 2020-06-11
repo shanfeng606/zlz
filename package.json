@@ -1,0 +1,23 @@
+{
+  "name": "zlz",
+  "version": "0.0.1",
+  "description": "vue组件库 \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D \u001bUI组件库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanfeng606/zlz.git"
+  },
+  "keywords": [
+    "vue",
+    "ui"
+  ],
+  "author": "shanfeng606",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shanfeng606/zlz/issues"
+  },
+  "homepage": "https://github.com/shanfeng606/zlz#readme"
+}
