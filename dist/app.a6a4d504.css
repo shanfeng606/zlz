@@ -34,3 +34,8 @@
   margin-right: 0;
   margin-left: 0.2rem;
 }
+.g-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
