@@ -1,3 +1,8 @@
+.g-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
 @keyframes spin-data-v-2dd9c3 {
 0% {
     transform: rotate(0deg);
@@ -44,11 +49,6 @@
 }
 .g-button .loading[data-v-2dd9c3] {
   animation: spin-data-v-2dd9c3 2s infinite linear;
-}
-.g-icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: middle;
 }
 .g-button-group {
   display: inline-flex;

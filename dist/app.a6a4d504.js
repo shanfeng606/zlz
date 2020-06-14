@@ -12427,119 +12427,7 @@ function patchScopedSlots (instance) {
   }
 }
 
-},{}],"src/button.vue":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default = {
-  props: {
-    icon: {},
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    iconPosition: {
-      type: String,
-      default: "left",
-      validator: function validator(value) {
-        return value === "left" || value === "right";
-      }
-    }
-  }
-};
-exports.default = _default;
-        var $2dd9c3 = exports.default || module.exports;
-      
-      if (typeof $2dd9c3 === 'function') {
-        $2dd9c3 = $2dd9c3.options;
-      }
-    
-        /* template */
-        Object.assign($2dd9c3, (function () {
-          var render = function() {
-  var _obj
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "button",
-    {
-      staticClass: "g-button",
-      class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj),
-      on: {
-        click: function($event) {
-          return _vm.$emit("click")
-        }
-      }
-    },
-    [
-      _vm.icon && !_vm.loading
-        ? _c("g-icon", { staticClass: "icon", attrs: { name: _vm.icon } })
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.loading
-        ? _c("g-icon", {
-            staticClass: "loading icon",
-            attrs: { name: "jiazaizhong" }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-          return {
-            render: render,
-            staticRenderFns: staticRenderFns,
-            _compiled: true,
-            _scopeId: "data-v-2dd9c3",
-            functional: undefined
-          };
-        })());
-      
-    /* hot reload */
-    (function () {
-      if (module.hot) {
-        var api = require('vue-hot-reload-api');
-        api.install(require('vue'));
-        if (api.compatible) {
-          module.hot.accept();
-          if (!module.hot.data) {
-            api.createRecord('$2dd9c3', $2dd9c3);
-          } else {
-            api.reload('$2dd9c3', $2dd9c3);
-          }
-        }
-
-        
-        var reloadCSS = require('_css_loader');
-        module.hot.dispose(reloadCSS);
-        module.hot.accept(reloadCSS);
-      
-      }
-    })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/icon.vue":[function(require,module,exports) {
+},{}],"src/icon.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -12604,7 +12492,127 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/button-group.vue":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/button.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _icon = _interopRequireDefault(require("./icon"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  components: {
+    'g-icon': _icon.default
+  },
+  props: {
+    icon: {},
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    iconPosition: {
+      type: String,
+      default: "left",
+      validator: function validator(value) {
+        return value === "left" || value === "right";
+      }
+    }
+  }
+};
+exports.default = _default;
+        var $2dd9c3 = exports.default || module.exports;
+      
+      if (typeof $2dd9c3 === 'function') {
+        $2dd9c3 = $2dd9c3.options;
+      }
+    
+        /* template */
+        Object.assign($2dd9c3, (function () {
+          var render = function() {
+  var _obj
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "button",
+    {
+      staticClass: "g-button",
+      class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj),
+      on: {
+        click: function($event) {
+          return _vm.$emit("click")
+        }
+      }
+    },
+    [
+      _vm.icon && !_vm.loading
+        ? _c("g-icon", { staticClass: "icon", attrs: { name: _vm.icon } })
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.loading
+        ? _c("g-icon", {
+            staticClass: "loading icon",
+            attrs: { name: "loading" }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-2dd9c3",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$2dd9c3', $2dd9c3);
+          } else {
+            api.reload('$2dd9c3', $2dd9c3);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"./icon":"src/icon.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/button-group.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23787,13 +23795,13 @@ var expect = _chai.default.expect;
 
   var vm = new Constructor({
     propsData: {
-      icon: "shezhi"
+      icon: "setting"
     }
   });
   vm.$mount();
   var useElement = vm.$el.querySelector('use');
   var href = useElement.getAttribute('xlink:href');
-  expect(href).to.eq("#i-shezhi");
+  expect(href).to.eq("#i-setting");
   vm.$el.remove();
   vm.$destroy();
 }
@@ -23802,7 +23810,7 @@ var expect = _chai.default.expect;
 
   var button = new _Constructor({
     propsData: {
-      icon: "shezhi",
+      icon: "setting",
       loading: true
     }
   });
@@ -23812,7 +23820,7 @@ var expect = _chai.default.expect;
 
   var _href = _useElement.getAttribute("xlink:href");
 
-  expect(_href).to.eq("#i-jiazaizhong");
+  expect(_href).to.eq("#i-loading");
   button.$el.remove();
   button.$destroy();
 }
@@ -23824,7 +23832,7 @@ var expect = _chai.default.expect;
 
   var _vm = new _Constructor2({
     propsData: {
-      icon: 'shezhi'
+      icon: 'setting'
     }
   });
 
@@ -23850,7 +23858,7 @@ var expect = _chai.default.expect;
 
   var _vm2 = new _Constructor3({
     propsData: {
-      icon: "shezhi",
+      icon: "setting",
       iconPosition: "right"
     }
   });
@@ -23874,7 +23882,7 @@ var expect = _chai.default.expect;
 
   var _vm3 = new _Constructor4({
     propsData: {
-      icon: "shezhi"
+      icon: "setting"
     }
   });
 
@@ -23918,7 +23926,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57024" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50992" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
