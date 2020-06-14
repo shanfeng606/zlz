@@ -1,7 +1,7 @@
 {
   "name": "zlz-2020",
   "version": "0.0.1",
-  "description": "vue组件库 \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D \u001bUI组件库",
+  "description": "vue-UI组件库",
   "main": "index.js",
   "scripts": {
     "dev-test": "parcel watch test/* --no-cache & karma start",
