@@ -12727,6 +12727,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
 var _default = {
   components: {
     Icon: _icon.default
@@ -12769,7 +12773,21 @@ exports.default = _default;
     [
       _c("input", {
         attrs: { type: "text", disabled: _vm.disabled, readonly: _vm.readonly },
-        domProps: { value: _vm.value }
+        domProps: { value: _vm.value },
+        on: {
+          change: function($event) {
+            return _vm.$emit("change", $event.target.value)
+          },
+          input: function($event) {
+            return _vm.$emit("input", $event.target.value)
+          },
+          focus: function($event) {
+            return _vm.$emit("focus", $event.target.value)
+          },
+          blur: function($event) {
+            return _vm.$emit("blur", $event.target.value)
+          }
+        }
       }),
       _vm._v(" "),
       _vm.error
@@ -12845,7 +12863,7 @@ new _vue.default({
   el: "#app",
   data: {
     loading1: false,
-    loading2: false,
+    loading2: true,
     loading3: false
   }
 });
@@ -12877,7 +12895,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49846" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54462" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
