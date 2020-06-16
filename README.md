@@ -8,11 +8,13 @@
 1.添加CSS样式
     使用本框架前，请在CSS中开启border-box
 
-```css
+```CSS
 *，*::before,*::after{box-sizing:border-box;}
 ```
-    IE8 及以上浏览器都支持此样式
-    你还需要设置默认颜色等变量（后续会改成SCSS变量）
+
+IE8 及以上浏览器都支持此样式
+你还需要设置默认颜色等变量（后续会改成SCSS变量）
+
 ```css
 html {
         --button-height: 32px;
@@ -25,7 +27,9 @@ html {
         --border-color-hover: #666;
     }
 ```
-    IE15 及以上浏览器都支持此样式
+
+IE15 及以上浏览器都支持此样式
+
 2.安装zlz-UI
  ```
  npm i --save zlz-2020
