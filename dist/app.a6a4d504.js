@@ -12864,7 +12864,8 @@ new _vue.default({
   data: {
     loading1: false,
     loading2: true,
-    loading3: false
+    loading3: false,
+    message: 'asdasdas'
   }
 });
 },{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./button-group":"src/button-group.vue","./input":"src/input.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
