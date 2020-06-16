@@ -15,6 +15,7 @@
 <script>
 import Icon from './icon'
 export default {
+  name:'zlzButton',
   components:{
     'g-icon':Icon
   },
