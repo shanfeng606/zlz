@@ -33,14 +33,36 @@
   </head>
   <body>
     <div id="app">
+      
+      <g-row>
+        <g-col>1</g-col>
+        <g-col>2</g-col>
+      </g-row>
+      <g-row>
+        <g-col>1</g-col>
+        <g-col>2</g-col>
+        <g-col>3</g-col>
+      </g-row>
+      <g-row>
+        <g-col>1</g-col>
+        <g-col>2</g-col>
+        <g-col>3</g-col>
+        <g-col>4</g-col>
+      </g-row>
+      <g-row>
+        <g-col span="2">1</g-col>
+        <g-col span="22">2</g-col>
+      </g-row>
+
+      <hr />
       <div class="box">
         <g-input value="张三" disabled readonly></g-input>
         <g-input value="李四" readonly></g-input>
         <g-input value="王五"></g-input>
       </div>
-      <div class="box">
+      <!-- <div class="box">
         <g-input value="王五" @change="inputChange"></g-input>
-      </div>
+      </div> -->
       <div class="box">
         <g-input value="王" error="姓名不能少于两个字"></g-input>
       </div>
