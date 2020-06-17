@@ -14,7 +14,7 @@ export default {
     align: {
       type: String,
       validator(value) {
-        return ["left", "right", "center"].includes(value);
+        return ["left", "right", "center"].indexOf(value) >= 0;
       },
     },
   },
@@ -26,9 +26,9 @@ export default {
         marginRight: -gutter / 2 + "px",
       };
     },
-    rowClass(){
-        let {align}=this
-        return [align && `align-${align}`]
+    rowClass() {
+      let { align } = this;
+      return [align && `align-${align}`];
     },
   },
   mounted() {
@@ -42,15 +42,15 @@ export default {
 <style lang="scss" scoped>
 .row {
   display: flex;
-  flex-wrap:wrap;
-  &-align-left{
-      justify-content: flex-start;
+  flex-wrap: wrap;
+  &.align-left {
+    justify-content: flex-start;
   }
-  &-align-right{
-      justify-content: flex-end;
+  &.align-right {
+    justify-content: flex-end;
   }
-  &-align-center{
-      justify-self: center;
+  &.align-center {
+    justify-self: center;
   }
 }
 </style>

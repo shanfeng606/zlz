@@ -116,13 +116,13 @@
   display: flex;
   flex-wrap: wrap;
 }
-.row-align-left[data-v-4a6e15] {
+.row.align-left[data-v-4a6e15] {
     justify-content: flex-start;
 }
-.row-align-right[data-v-4a6e15] {
+.row.align-right[data-v-4a6e15] {
     justify-content: flex-end;
 }
-.row-align-center[data-v-4a6e15] {
+.row.align-center[data-v-4a6e15] {
     justify-self: center;
 }
 
