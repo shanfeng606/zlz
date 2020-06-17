@@ -13141,7 +13141,7 @@ new _vue.default({
   },
   created: function created() {},
   methods: {
-    InputChange: function InputChange(e) {
+    inputChange: function inputChange(e) {
       console.log(e);
     }
   }

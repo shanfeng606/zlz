@@ -25,7 +25,7 @@ new Vue({
 
   },
   methods:{
-    InputChange(e){
+    inputChange(e){
       console.log(e)
     }
   }
