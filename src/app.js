@@ -43,7 +43,14 @@ new Vue({
       console.log(e)
     },
     showToast(){
-      this.$toast('当前功能不稳定，如果遇到bug请关闭该功能')
+      this.$toast('当前功能不稳定，如果遇到bug请关闭该功能',{
+        // closeButton: {
+        //   text: "知道了",
+        //   callback() {
+        //     console.log("用户说他知道了");
+          // },
+        // },
+      })
     },
 
   }
