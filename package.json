@@ -4,7 +4,7 @@
   "description": "vue-UI组件库",
   "main": "index.js",
   "scripts": {
-    "start":"parcel index.html --no-cache",
+    "start": "parcel index.html --no-cache",
     "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run"
   },
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/shanfeng606/zlz#readme",
   "dependencies": {
+    "toast": "^0.2.6",
     "vue": "^2.6.11",
     "vue-hot-reload-api": "^2.3.4"
   },

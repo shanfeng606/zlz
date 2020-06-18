@@ -19,9 +19,6 @@
         --border-color: #999;
         --border-color-hover: #666;
       }
-      #app {
-        /* margin: 20px; */
-      }
       body {
         font-size: var(--font-size);
       }
@@ -51,7 +48,9 @@
   <link rel="stylesheet" href="/app.a6a4d504.css"></head>
   <body>
     <div id="app">
-      <g-layout style="height:100vh;">
+
+      <button @click="showToast">123</button>
+      <!-- <g-layout style="height:100vh;">
         <g-sider>sider</g-sider>
         <g-layout>
           <g-header>header</g-header>
@@ -60,7 +59,7 @@
 
           <g-footer>footer</g-footer>
         </g-layout>
-      </g-layout>
+      </g-layout> -->
 
       <!-- <g-row align="right">
         <g-col span="24" :narrow-pc="{span:8}">

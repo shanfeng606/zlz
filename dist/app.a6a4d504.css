@@ -1029,3 +1029,20 @@
   flex-grow: 1;
 }
 
+.toast[data-v-1b4b69] {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: white;
+  height: 40px;
+  line-height: 1.8;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  padding: 0 16px;
+}
+
