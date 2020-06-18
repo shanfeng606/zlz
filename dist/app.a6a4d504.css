@@ -1001,3 +1001,31 @@
 }
 }
 
+.layout[data-v-01109b] {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+.layout.hasSider[data-v-01109b] {
+    flex-direction: row;
+}
+
+.sider[data-v-b01cb7] {
+  position: relative;
+}
+.sider > button[data-v-b01cb7] {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.fade-enter-active[data-v-b01cb7], .fade-leave-active[data-v-b01cb7] {
+  transition: all .5s;
+}
+.fade-enter[data-v-b01cb7], .fade-leave-to[data-v-b01cb7] {
+  margin-left: -200px;
+}
+
+.content[data-v-b989ee] {
+  flex-grow: 1;
+}
+
