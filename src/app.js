@@ -36,21 +36,17 @@ new Vue({
     message:'hello world'
   },
   created(){   
-      // this.$toast('当前功能不稳定，如果遇到bug请关闭该功能')
+      this.$toast('<p>123<p><a href="http://qq.c<p><a href="http://qq.cqq.com">qq</a>',{
+        enableHtml:false
+      })
   },
   methods:{
     inputChange(e){
       console.log(e)
     },
     showToast(){
-      this.$toast('当前功能不稳定，如果遇到bug请关闭该功能',{
-        // closeButton: {
-        //   text: "知道了",
-        //   callback() {
-        //     console.log("用户说他知道了");
-          // },
-        // },
-      })
+      // this.$toast('当前功能不稳定，如果遇到bug请关闭该功能',{
+      // })
     },
 
   }

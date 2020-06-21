@@ -13448,6 +13448,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
 var _default = {
   name: "zlzToast",
   props: {
@@ -13457,7 +13462,7 @@ var _default = {
     },
     autoCloseDelay: {
       type: Number,
-      default: 5
+      default: 300
     },
     closeButton: {
       type: Object,
@@ -13467,18 +13472,33 @@ var _default = {
           callback: undefined
         };
       }
+    },
+    enableHtml: {
+      type: Boolean,
+      default: false
     }
   },
   mounted: function mounted() {
-    var _this = this;
-
-    if (this.autoClose) {
-      setTimeout(function () {
-        _this.close();
-      }, this.autoCloseDelay * 1000);
-    }
+    this.execAutoClose();
+    this.updateStyles();
   },
   methods: {
+    updateStyles: function updateStyles() {
+      var _this = this;
+
+      this.$nextTick(function () {
+        _this.$refs.line.style.height = "".concat(_this.$refs.wrapper.getBoundingClientRect().height, "px");
+      });
+    },
+    execAutoClose: function execAutoClose() {
+      var _this2 = this;
+
+      if (this.autoClose) {
+        setTimeout(function () {
+          _this2.close();
+        }, this.autoCloseDelay * 1000);
+      }
+    },
     close: function close() {
       this.$el.remove();
       this.$destroy();
@@ -13505,24 +13525,28 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "toast" },
-    [
-      _vm._t("default"),
-      _vm._v(" "),
-      _c("div", { staticClass: "line" }),
-      _vm._v(" "),
-      _vm.closeButton
-        ? _c(
-            "span",
-            { staticClass: "close", on: { click: _vm.onClickClose } },
-            [_vm._v("\n    " + _vm._s(_vm.closeButton.text))]
-          )
-        : _vm._e()
-    ],
-    2
-  )
+  return _c("div", { ref: "wrapper", staticClass: "toast" }, [
+    _c(
+      "div",
+      { staticClass: "message" },
+      [
+        !_vm.enableHtml
+          ? _vm._t("default")
+          : _c("div", {
+              domProps: { innerHTML: _vm._s(_vm.$slots.default[0]) }
+            })
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", { ref: "line", staticClass: "line" }),
+    _vm._v(" "),
+    _vm.closeButton
+      ? _c("span", { staticClass: "close", on: { click: _vm.onClickClose } }, [
+          _vm._v("\n    " + _vm._s(_vm.closeButton.text) + "\n  ")
+        ])
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13574,9 +13598,7 @@ var _default = {
     Vue.prototype.$toast = function (message, toastOptions) {
       var Constructor = Vue.extend(_toast.default);
       var toast = new Constructor({
-        propsData: {
-          closeButton: toastOptions.closeButton
-        }
+        propsData: toastOptions
       });
       toast.$slots.default = [message];
       toast.$mount();
@@ -13652,20 +13674,17 @@ new _vue.default({
     loading3: false,
     message: 'hello world'
   },
-  created: function created() {// this.$toast('当前功能不稳定，如果遇到bug请关闭该功能')
+  created: function created() {
+    this.$toast('<p>123<p><a href="http://qq.c<p><a href="http://qq.cqq.com">qq</a>', {
+      enableHtml: false
+    });
   },
   methods: {
     inputChange: function inputChange(e) {
       console.log(e);
     },
-    showToast: function showToast() {
-      this.$toast('当前功能不稳定，如果遇到bug请关闭该功能', {// closeButton: {
-        //   text: "知道了",
-        //   callback() {
-        //     console.log("用户说他知道了");
-        // },
-        // },
-      });
+    showToast: function showToast() {// this.$toast('当前功能不稳定，如果遇到bug请关闭该功能',{
+      // })
     }
   }
 });
@@ -13697,7 +13716,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53787" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56134" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
