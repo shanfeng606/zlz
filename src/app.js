@@ -36,8 +36,15 @@ new Vue({
     message:'hello world'
   },
   created(){   
-      this.$toast('<p>123<p><a href="http://qq.c<p><a href="http://qq.cqq.com">qq</a>',{
-        enableHtml:false
+      this.$toast('您的智商需要充值',{
+        position:'middle',
+        enableHtml:false,
+        closeButton:{
+          text:'已充值',
+          callback(){
+            console.log('他说已经充值智商了')
+          }
+        }
       })
   },
   methods:{

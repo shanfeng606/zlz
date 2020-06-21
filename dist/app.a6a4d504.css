@@ -1031,9 +1031,7 @@
 
 .toast[data-v-1b4b69] {
   position: fixed;
-  top: 0;
   left: 50%;
-  transform: translateX(-50%);
   font-size: 14px;
   color: white;
   min-height: 40px;
@@ -1056,5 +1054,17 @@
     height: 100%;
     border-left: 1px solid #666;
     margin-left: 16px;
+}
+.toast.position-top[data-v-1b4b69] {
+    top: 0;
+    transform: translateX(-50%);
+}
+.toast.position-bottom[data-v-1b4b69] {
+    bottom: 0;
+    transform: translateX(-50%);
+}
+.toast.position-middle[data-v-1b4b69] {
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
