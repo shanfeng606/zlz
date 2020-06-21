@@ -13445,8 +13445,11 @@ var _default = {
   name: "zlzToast",
   props: {
     autoClose: {
-      type: Boolean,
-      default: true
+      type: [Boolean, Number],
+      default: 5,
+      validator: function validator(value) {
+        return value === false || typeof value === "number";
+      }
     },
     autoCloseDelay: {
       type: Number,
@@ -13467,9 +13470,9 @@ var _default = {
     },
     position: {
       type: String,
-      default: 'top',
+      default: "top",
       validator: function validator(value) {
-        return ['top', 'bottom', 'middle'].indexOf(value) >= 0;
+        return ["top", "bottom", "middle"].indexOf(value) >= 0;
       }
     }
   },
@@ -13487,7 +13490,7 @@ var _default = {
       var _this = this;
 
       this.$nextTick(function () {
-        _this.$refs.line.style.height = "".concat(_this.$refs.wrapper.getBoundingClientRect().height, "px");
+        _this.$refs.line.style.height = "".concat(_this.$refs.toast.getBoundingClientRect().height, "px");
       });
     },
     execAutoClose: function execAutoClose() {
@@ -13501,7 +13504,7 @@ var _default = {
     },
     close: function close() {
       this.$el.remove();
-      this.$emit('close');
+      this.$emit("close");
       this.$destroy();
     },
     onClickClose: function onClickClose() {
@@ -13526,10 +13529,8 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { ref: "wrapper", staticClass: "toast", class: _vm.toastClasses },
-    [
+  return _c("div", { staticClass: "wrapper", class: _vm.toastClasses }, [
+    _c("div", { ref: "toast", staticClass: "toast" }, [
       _c(
         "div",
         { staticClass: "message" },
@@ -13549,11 +13550,11 @@ exports.default = _default;
         ? _c(
             "span",
             { staticClass: "close", on: { click: _vm.onClickClose } },
-            [_vm._v("\n    " + _vm._s(_vm.closeButton.text) + "\n  ")]
+            [_vm._v("\n      " + _vm._s(_vm.closeButton.text) + "\n    ")]
           )
         : _vm._e()
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13611,7 +13612,7 @@ var _default = {
       currentToast = createToast({
         Vue: Vue,
         message: message,
-        ropsData: toastOptions,
+        propsData: toastOptions,
         onClose: function onClose() {
           currentToast = null;
         }
@@ -13706,12 +13707,18 @@ new _vue.default({
   },
   created: function created() {},
   methods: {
-    inputChange: function inputChange(e) {
-      console.log(e);
+    showToast1: function showToast1() {
+      this.showToast('top');
     },
-    showToast: function showToast() {
+    showToast2: function showToast2() {
+      this.showToast('middle');
+    },
+    showToast3: function showToast3() {
+      this.showToast('bottom');
+    },
+    showToast: function showToast(position) {
       this.$toast("\u4F60\u7684\u667A\u5546\u76EE\u524D\u4E3A ".concat(parseInt(Math.random() * 100), "\u3002\u60A8\u7684\u667A\u5546\u9700\u8981\u5145\u503C!"), {
-        position: 'middle',
+        position: position,
         enableHtml: false,
         closeButton: {
           text: '已充值',
@@ -13751,7 +13758,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56134" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49475" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

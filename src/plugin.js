@@ -13,7 +13,7 @@ export default {
       currentToast=createToast({
         Vue ,
         message,
-        ropsData:toastOptions,
+        propsData:toastOptions,
         onClose:()=>{
           currentToast=null
         }
