@@ -13599,20 +13599,38 @@ var _toast = _interopRequireDefault(require("./toast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var currentToast;
 var _default = {
   install: function install(Vue, options) {
     Vue.prototype.$toast = function (message, toastOptions) {
-      var Constructor = Vue.extend(_toast.default);
-      var toast = new Constructor({
+      if (currentToast) {
+        currentToast.close();
+      }
+
+      currentToast = createToast({
+        Vue: Vue,
+        message: message,
         propsData: toastOptions
       });
-      toast.$slots.default = [message];
-      toast.$mount();
-      document.body.appendChild(toast.$el);
     };
   }
-};
+}; // 创建toast的函数
+
 exports.default = _default;
+
+function createToast(_ref) {
+  var Vue = _ref.Vue,
+      message = _ref.message,
+      propsData = _ref.propsData;
+  var Constructor = Vue.extend(_toast.default);
+  var toast = new Constructor({
+    propsData: propsData
+  });
+  toast.$slots.default = [message];
+  toast.$mount();
+  document.body.appendChild(toast.$el);
+  return toast;
+}
 },{"./toast":"src/toast.vue"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
@@ -13680,24 +13698,22 @@ new _vue.default({
     loading3: false,
     message: 'hello world'
   },
-  created: function created() {
-    this.$toast('您的智商需要充值', {
-      position: 'middle',
-      enableHtml: false,
-      closeButton: {
-        text: '已充值',
-        callback: function callback() {
-          console.log('他说已经充值智商了');
-        }
-      }
-    });
-  },
+  created: function created() {},
   methods: {
     inputChange: function inputChange(e) {
       console.log(e);
     },
-    showToast: function showToast() {// this.$toast('当前功能不稳定，如果遇到bug请关闭该功能',{
-      // })
+    showToast: function showToast() {
+      this.$toast("\u4F60\u7684\u667A\u5546\u76EE\u524D\u4E3A ".concat(parseInt(Math.random() * 100), "\u3002\u60A8\u7684\u667A\u5546\u9700\u8981\u5145\u503C!"), {
+        position: 'middle',
+        enableHtml: false,
+        closeButton: {
+          text: '已充值',
+          callback: function callback() {
+            console.log('他说已经充值智商了');
+          }
+        }
+      });
     }
   }
 });
