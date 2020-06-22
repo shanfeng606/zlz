@@ -13448,12 +13448,12 @@ var _default = {
       type: [Boolean, Number],
       default: 5,
       validator: function validator(value) {
-        return value === false || typeof value === "number";
+        if (value === false || typeof value === 'number') {
+          return true;
+        } else {
+          return false;
+        }
       }
-    },
-    autoCloseDelay: {
-      type: Number,
-      default: 300
     },
     closeButton: {
       type: Object,
@@ -13499,7 +13499,7 @@ var _default = {
       if (this.autoClose) {
         setTimeout(function () {
           _this2.close();
-        }, this.autoCloseDelay * 1000);
+        }, this.autoClose * 1000);
       }
     },
     close: function close() {
@@ -13550,7 +13550,7 @@ exports.default = _default;
         ? _c(
             "span",
             { staticClass: "close", on: { click: _vm.onClickClose } },
-            [_vm._v("\n      " + _vm._s(_vm.closeButton.text) + "\n    ")]
+            [_vm._v(_vm._s(_vm.closeButton.text))]
           )
         : _vm._e()
     ])
@@ -13725,7 +13725,8 @@ new _vue.default({
           callback: function callback() {
             console.log('他说已经充值智商了');
           }
-        }
+        },
+        autoClose: 3
       });
     }
   }
@@ -13758,7 +13759,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49475" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51712" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
