@@ -1116,8 +1116,8 @@
   height: 40px;
   justify-self: flex-start;
   align-items: center;
-  border: 1px solid red;
   position: relative;
+  border-bottom: 1px solid #ddd;
 }
 .tabs-head > .line[data-v-3fa258] {
     position: absolute;
@@ -1125,8 +1125,12 @@
     border-bottom: 1px solid blue;
     transition: all 350ms;
 }
-.tabs-head > .actions[data-v-3fa258] {
+.tabs-head > .actions-wrapper[data-v-3fa258] {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1em;
 }
 
 .tabs-item[data-v-850133] {
@@ -1141,8 +1145,11 @@
     color: blue;
     font-weight: bold;
 }
+.tabs-item.disabled[data-v-850133] {
+    color: grey;
+}
 
-.tabs-pane.active[data-v-6d9162] {
-  background-color: red;
+.tabs-pane[data-v-6d9162] {
+  padding: 1em;
 }
 

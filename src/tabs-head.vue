@@ -14,7 +14,7 @@ export default {
   mounted() {
     this.eventBus.$on('update:selected', (item,vm) => {
       let {width,height,top,left}=vm.$el.getBoundingClientRect()
-      console.log(width,height,top,left)
+    //   console.log(width,height,top,left)
       this.$refs.line.style.width=`${width}px`
       this.$refs.line.style.left=`${left}px`
     });
@@ -24,22 +24,28 @@ export default {
 <style lang="scss" scoped>
 $tab-height: 40px;
 $blue: blue;
+$border-color:#ddd;
+
 .tabs-head {
   display: flex;
   height: $tab-height;
   justify-self: flex-start;
   align-items: center;
-  border: 1px solid red;
+//   border: 1px solid red;
   position: relative;
+  border-bottom: 1px solid $border-color;
   > .line {
     position: absolute;
     bottom: 0;
     border-bottom: 1px solid blue;
-    // width: 100px;
     transition: all 350ms;
   }
-  > .actions {
+  > .actions-wrapper {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1em;
   }
 }
 </style>>

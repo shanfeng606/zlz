@@ -13773,9 +13773,9 @@ var _default = {
           width = _vm$$el$getBoundingCl.width,
           height = _vm$$el$getBoundingCl.height,
           top = _vm$$el$getBoundingCl.top,
-          left = _vm$$el$getBoundingCl.left;
+          left = _vm$$el$getBoundingCl.left; //   console.log(width,height,top,left)
 
-      console.log(width, height, top, left);
+
       _this.$refs.line.style.width = "".concat(width, "px");
       _this.$refs.line.style.left = "".concat(left, "px");
     });
@@ -13926,10 +13926,6 @@ var _default = {
     };
   },
   props: {
-    // active:{
-    //     type:Boolean,
-    //     default:false
-    // },
     disabled: {
       type: Boolean,
       default: false
@@ -13942,7 +13938,8 @@ var _default = {
   computed: {
     classes: function classes() {
       return {
-        active: this.active
+        active: this.active,
+        disabled: this.disabled
       };
     }
   },
@@ -13965,7 +13962,11 @@ var _default = {
     });
   },
   methods: {
-    xxx: function xxx() {
+    onClick: function onClick() {
+      if (this.disabled) {
+        return;
+      }
+
       this.eventBus.$emit("update:selected", this.name, this);
     }
   }
@@ -13985,7 +13986,11 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "tabs-item", class: _vm.classes, on: { click: _vm.xxx } },
+    {
+      staticClass: "tabs-item",
+      class: _vm.classes,
+      on: { click: _vm.onClick }
+    },
     [_vm._t("default")],
     2
   )
