@@ -13656,7 +13656,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 var _default = {
-  name: 'zlzTabs',
+  name: "zlzTabs",
   props: {
     selected: {
       type: String,
@@ -13664,9 +13664,9 @@ var _default = {
     },
     direction: {
       type: String,
-      default: 'horizontal',
+      default: "horizontal",
       validator: function validator(value) {
-        return ['horizontal', 'vertical'].indexOf(value) >= 0;
+        return ["horizontal", "vertical"].indexOf(value) >= 0;
       }
     }
   },
@@ -13680,12 +13680,22 @@ var _default = {
       eventBus: this.eventBus
     };
   },
-  // created(){  
-  //     this.$emit('update:selected','this $emit')
-  //     this.eventBus.$emit('update:selected','this eventBus $emit')
-  // }
+  //   created(){
+  //       this.$emit('update:selected','this $emit')
+  //       this.eventBus.$emit('update:selected','this eventBus $emit')
+  //   },
   mounted: function mounted() {
-    this.eventBus.$emit('update:selected', this.selected);
+    var _this = this;
+
+    this.$children.forEach(function (vm) {
+      if (vm.$options.name === "zlzTabsHead") {
+        vm.$children.forEach(function (childVm) {
+          if (childVm.$options.name === "zlzTabsItem" && childVm.name === _this.selected) {
+            _this.eventBus.$emit("update:selected", _this.selected, childVm);
+          }
+        });
+      }
+    });
   }
 };
 exports.default = _default;
@@ -13751,10 +13761,25 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   name: "zlzTabsHead",
   inject: ["eventBus"],
-  created: function created() {}
+  mounted: function mounted() {
+    var _this = this;
+
+    this.eventBus.$on('update:selected', function (item, vm) {
+      var _vm$$el$getBoundingCl = vm.$el.getBoundingClientRect(),
+          width = _vm$$el$getBoundingCl.width,
+          height = _vm$$el$getBoundingCl.height,
+          top = _vm$$el$getBoundingCl.top,
+          left = _vm$$el$getBoundingCl.left;
+
+      console.log(width, height, top, left);
+      _this.$refs.line.style.width = "".concat(width, "px");
+      _this.$refs.line.style.left = "".concat(left, "px");
+    });
+  }
 };
 exports.default = _default;
         var $3fa258 = exports.default || module.exports;
@@ -13774,6 +13799,8 @@ exports.default = _default;
     { staticClass: "tabs-head" },
     [
       _vm._t("default"),
+      _vm._v(" "),
+      _c("div", { ref: "line", staticClass: "line" }),
       _vm._v(" "),
       _c("div", { staticClass: "actions-wrapper" }, [_vm._t("actions")], 2)
     ],
@@ -13929,7 +13956,7 @@ var _default = {
 
     this.eventBus.$on("update:selected", function (name) {
       if (name === _this.name) {
-        console.log("\u6211".concat(_this.name, "\u88AB\u9009\u4E2D\u4E86"));
+        // console.log(`我${this.name}被选中了`);
         _this.active = true;
       } else {
         // console.log(`我${this.name}没被选中`)
@@ -13939,7 +13966,7 @@ var _default = {
   },
   methods: {
     xxx: function xxx() {
-      this.eventBus.$emit("update:selected", this.name);
+      this.eventBus.$emit("update:selected", this.name, this);
     }
   }
 };
@@ -14034,7 +14061,7 @@ var _default = {
 
     this.eventBus.$on("update:selected", function (name) {
       if (name === _this.name) {
-        console.log("pane".concat(_this.name, "\u88AB\u9009\u4E2D\u4E86"));
+        // console.log(`pane${this.name}被选中了`);
         _this.active = true;
       } else {
         // console.log(`pane${this.name}没被选中`);

@@ -1117,6 +1117,13 @@
   justify-self: flex-start;
   align-items: center;
   border: 1px solid red;
+  position: relative;
+}
+.tabs-head > .line[data-v-3fa258] {
+    position: absolute;
+    bottom: 0;
+    border-bottom: 1px solid blue;
+    transition: all 350ms;
 }
 .tabs-head > .actions[data-v-3fa258] {
     margin-left: auto;
@@ -1131,7 +1138,8 @@
   cursor: pointer;
 }
 .tabs-item.active[data-v-850133] {
-    background: red;
+    color: blue;
+    font-weight: bold;
 }
 
 .tabs-pane.active[data-v-6d9162] {

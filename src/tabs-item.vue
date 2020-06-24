@@ -41,7 +41,7 @@ export default {
   created() {
     this.eventBus.$on("update:selected", name => {
       if (name === this.name) {
-        console.log(`我${this.name}被选中了`);
+        // console.log(`我${this.name}被选中了`);
         this.active = true;
       } else {
         // console.log(`我${this.name}没被选中`)
@@ -51,12 +51,13 @@ export default {
   },
   methods: {
     xxx() {
-      this.eventBus.$emit("update:selected", this.name);
+      this.eventBus.$emit("update:selected", this.name,this);
     }
   }
 };
 </script>
 <style lang="scss" scoped>
+$blue:blue;
 .tabs-item {
     display: flex;
     align-items: center;
@@ -65,7 +66,8 @@ export default {
   padding: 0 1em;
   cursor: pointer;
   &.active {
-    background: red;
+    color:$blue;
+    font-weight: bold;
   }
 }
 </style>>
