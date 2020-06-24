@@ -41,7 +41,7 @@ export default {
   created() {
     this.eventBus.$on("update:selected", name => {
       if (name === this.name) {
-        console.log(`我${this.name}被选中了`)
+        console.log(`我${this.name}被选中了`);
         this.active = true;
       } else {
         // console.log(`我${this.name}没被选中`)
@@ -58,10 +58,14 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tabs-item {
+    display: flex;
+    align-items: center;
+  height: 100%;
   flex-shrink: 0;
   padding: 0 1em;
-  &.active{
-      background: red;
+  cursor: pointer;
+  &.active {
+    background: red;
   }
 }
 </style>>

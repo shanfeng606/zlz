@@ -1123,8 +1123,12 @@
 }
 
 .tabs-item[data-v-850133] {
+  display: flex;
+  align-items: center;
+  height: 100%;
   flex-shrink: 0;
   padding: 0 1em;
+  cursor: pointer;
 }
 .tabs-item.active[data-v-850133] {
     background: red;
