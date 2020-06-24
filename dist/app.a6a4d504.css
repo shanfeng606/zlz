@@ -1111,3 +1111,26 @@
     margin-left: 16px;
 }
 
+.tabs-head[data-v-3fa258] {
+  display: flex;
+  height: 40px;
+  justify-self: flex-start;
+  align-items: center;
+  border: 1px solid red;
+}
+.tabs-head > .actions[data-v-3fa258] {
+    margin-left: auto;
+}
+
+.tabs-item[data-v-850133] {
+  flex-shrink: 0;
+  padding: 0 1em;
+}
+.tabs-item.active[data-v-850133] {
+    background: red;
+}
+
+.tabs-pane.active[data-v-6d9162] {
+  background-color: red;
+}
+
