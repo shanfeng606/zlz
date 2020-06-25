@@ -13687,6 +13687,10 @@ var _default = {
   mounted: function mounted() {
     var _this = this;
 
+    if (this.$children.length === 0) {
+      console && console.warn && console.warn('tabs的子组件应该是tabs-head和tabs-bav，但你没有写子组件');
+    }
+
     this.$children.forEach(function (vm) {
       if (vm.$options.name === "zlzTabsHead") {
         vm.$children.forEach(function (childVm) {
@@ -13951,15 +13955,17 @@ var _default = {
   created: function created() {
     var _this = this;
 
-    this.eventBus.$on("update:selected", function (name) {
-      if (name === _this.name) {
-        // console.log(`我${this.name}被选中了`);
-        _this.active = true;
-      } else {
-        // console.log(`我${this.name}没被选中`)
-        _this.active = false;
-      }
-    });
+    if (this.eventBus) {
+      this.eventBus.$on("update:selected", function (name) {
+        if (name === _this.name) {
+          // console.log(`我${this.name}被选中了`);
+          _this.active = true;
+        } else {
+          // console.log(`我${this.name}没被选中`)
+          _this.active = false;
+        }
+      });
+    }
   },
   methods: {
     onClick: function onClick() {
@@ -13967,7 +13973,8 @@ var _default = {
         return;
       }
 
-      this.eventBus.$emit("update:selected", this.name, this);
+      this.eventBus && this.eventBus.$emit("update:selected", this.name, this);
+      this.$emit('click', this);
     }
   }
 };
@@ -13989,6 +13996,7 @@ exports.default = _default;
     {
       staticClass: "tabs-item",
       class: _vm.classes,
+      attrs: { "data-name": _vm.name },
       on: { click: _vm.onClick }
     },
     [_vm._t("default")],
@@ -14276,7 +14284,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57588" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56766" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
