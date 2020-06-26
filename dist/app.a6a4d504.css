@@ -1154,3 +1154,14 @@
   padding: 1em;
 }
 
+.popover[data-v-8da124] {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+.popover .content-wrapper[data-v-8da124] {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+}
+
