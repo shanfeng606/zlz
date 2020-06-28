@@ -1159,9 +1159,10 @@
   vertical-align: top;
   position: relative;
 }
-.popover .content-wrapper[data-v-8da124] {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
+.content-wrapper[data-v-8da124] {
+  position: absolute;
+  border: 1px solid red;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  transform: translateY(-100%);
 }
 
