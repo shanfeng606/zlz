@@ -14164,6 +14164,11 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
 var _default = {
   name: "zlzPopover",
   data: function data() {
@@ -14171,18 +14176,44 @@ var _default = {
       visible: false
     };
   },
+  props: {
+    position: {
+      type: String,
+      default: "top",
+      validator: function validator(value) {
+        return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
+      }
+    }
+  },
   methods: {
     positionContent: function positionContent() {
       document.body.appendChild(this.$refs.contentWrapper);
+      var _this$$refs = this.$refs,
+          contentWrapper = _this$$refs.contentWrapper,
+          triggerWrapper = _this$$refs.triggerWrapper;
 
-      var _this$$refs$triggerWr = this.$refs.triggerWrapper.getBoundingClientRect(),
-          width = _this$$refs$triggerWr.width,
-          height = _this$$refs$triggerWr.height,
-          top = _this$$refs$triggerWr.top,
-          left = _this$$refs$triggerWr.left;
+      var _triggerWrapper$getBo = triggerWrapper.getBoundingClientRect(),
+          width = _triggerWrapper$getBo.width,
+          height = _triggerWrapper$getBo.height,
+          top = _triggerWrapper$getBo.top,
+          left = _triggerWrapper$getBo.left;
 
-      this.$refs.contentWrapper.style.left = left + window.scrollX + "px";
-      this.$refs.contentWrapper.style.top = top + window.scrollY + "px";
+      var _contentWrapper$getBo = contentWrapper.getBoundingClientRect(),
+          height2 = _contentWrapper$getBo.height;
+
+      if (this.position === "top") {
+        contentWrapper.style.left = left + window.scrollX + "px";
+        contentWrapper.style.top = top + window.scrollY + "px";
+      } else if (this.position === "bottom") {
+        contentWrapper.style.left = left + window.scrollX + "px";
+        contentWrapper.style.top = top + height + window.scrollY + "px";
+      } else if (this.position === "left") {
+        contentWrapper.style.left = left + window.scrollX + "px";
+        contentWrapper.style.top = top + window.scrollY + (height - height2) / 2 + "px";
+      } else if (this.position === "right") {
+        contentWrapper.style.left = left + window.scrollX + width + "px";
+        contentWrapper.style.top = top + window.scrollY + (height - height2) / 2 + "px";
+      }
     },
     onClickDocument: function onClickDocument(e) {
       if (this.$refs.popover && (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))) {
@@ -14230,6 +14261,7 @@ exports.default = _default;
         /* template */
         Object.assign($8da124, (function () {
           var render = function() {
+  var _obj
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
@@ -14249,7 +14281,12 @@ exports.default = _default;
       _vm.visible
         ? _c(
             "div",
-            { ref: "contentWrapper", staticClass: "content-wrapper" },
+            {
+              ref: "contentWrapper",
+              staticClass: "content-wrapper",
+              class:
+                ((_obj = {}), (_obj["position-" + _vm.position] = true), _obj)
+            },
             [_vm._t("content")],
             2
           )
