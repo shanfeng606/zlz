@@ -14267,16 +14267,7 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      ref: "popover",
-      staticClass: "popover",
-      on: {
-        click: function($event) {
-          $event.stopPropagation()
-          return _vm.onclick($event)
-        }
-      }
-    },
+    { ref: "popover", staticClass: "popover", on: { click: _vm.onclick } },
     [
       _vm.visible
         ? _c(

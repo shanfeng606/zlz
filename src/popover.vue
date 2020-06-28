@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click.stop="onclick" ref="popover">
+  <div class="popover" @click="onclick" ref="popover">
     <div
       ref="contentWrapper"
       class="content-wrapper"
@@ -74,7 +74,6 @@ export default {
       ) {
         return;
       }
-
       this.close();
     },
     open() {
