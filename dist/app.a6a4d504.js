@@ -14176,6 +14176,22 @@ var _default = {
       visible: false
     };
   },
+  props: {
+    position: {
+      type: String,
+      default: "top",
+      validator: function validator(value) {
+        return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
+      }
+    },
+    trigger: {
+      type: String,
+      default: 'click',
+      validator: function validator(value) {
+        return ['click', 'hover'].indexOf(value) >= 0;
+      }
+    }
+  },
   mounted: function mounted() {
     if (this.trigger === 'click') {
       this.$refs.popover.addEventListener('click', this.onClick);
@@ -14205,22 +14221,6 @@ var _default = {
         return 'click';
       } else {
         return 'mouseleave';
-      }
-    }
-  },
-  props: {
-    position: {
-      type: String,
-      default: "top",
-      validator: function validator(value) {
-        return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
-      }
-    },
-    trigger: {
-      type: String,
-      default: 'click',
-      validator: function validator(value) {
-        return ['click', 'hover'].indexOf(value) >= 0;
       }
     }
   },
@@ -14286,7 +14286,7 @@ var _default = {
       this.visible = false;
       document.removeEventListener("click", this.onClickDocument);
     },
-    onclick: function onclick(event) {
+    onClick: function onClick(event) {
       if (this.$refs.triggerWrapper.contains(event.target)) {
         if (this.visible === true) {
           this.close();
@@ -14321,7 +14321,7 @@ exports.default = _default;
             class:
               ((_obj = {}), (_obj["position-" + _vm.position] = true), _obj)
           },
-          [_vm._t("content")],
+          [_vm._t("content", null, { close: _vm.close })],
           2
         )
       : _vm._e(),
