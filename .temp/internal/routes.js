@@ -9,14 +9,6 @@ import GlobalLayout from "C:\\Users\\lenovo\\Desktop\\zlz\\node_modules\\@vuepre
 injectComponentOption(GlobalLayout, 'mixins', rootMixins)
 export const routes = [
   {
-    name: "v-7aed3489",
-    path: "/components/button.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-7aed3489").then(next)
-    },
-  },
-  {
     name: "v-2986c4bf",
     path: "/",
     component: GlobalLayout,
@@ -37,19 +29,11 @@ export const routes = [
     },
   },
   {
-    name: "v-3d016989",
-    path: "/components/layout.html",
+    name: "v-7aed3489",
+    path: "/components/button.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-3d016989").then(next)
-    },
-  },
-  {
-    name: "v-3aba1c49",
-    path: "/components/tabs.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-3aba1c49").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-7aed3489").then(next)
     },
   },
   {
@@ -61,11 +45,31 @@ export const routes = [
     },
   },
   {
-    name: "v-f43a7486",
-    path: "/components/popover.html",
+    name: "v-3d016989",
+    path: "/components/layout.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-f43a7486").then(next)
+      ensureAsyncComponentsLoaded("Layout", "v-3d016989").then(next)
+    },
+  },
+  {
+    name: "v-7469fb36",
+    path: "/get-started/",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-7469fb36").then(next)
+    },
+  },
+  {
+    path: "/get-started/index.html",
+    redirect: "/get-started/"
+  },
+  {
+    name: "v-3aba1c49",
+    path: "/components/tabs.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-3aba1c49").then(next)
     },
   },
   {
@@ -74,6 +78,14 @@ export const routes = [
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-ed7abf8e").then(next)
+    },
+  },
+  {
+    name: "v-f43a7486",
+    path: "/components/popover.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-f43a7486").then(next)
     },
   },
   {
@@ -87,18 +99,6 @@ export const routes = [
   {
     path: "/install/index.html",
     redirect: "/install/"
-  },
-  {
-    name: "v-7469fb36",
-    path: "/get-started/",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-7469fb36").then(next)
-    },
-  },
-  {
-    path: "/get-started/index.html",
-    redirect: "/get-started/"
   },
   {
     name: "v-3363610f",

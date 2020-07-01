@@ -8,16 +8,6 @@ export const siteData = {
   "headTags": [],
   "pages": [
     {
-      "title": "Button",
-      "frontmatter": {
-        "title": "Button"
-      },
-      "regularPath": "/components/button.html",
-      "relativePath": "components/button.md",
-      "key": "v-7aed3489",
-      "path": "/components/button.html"
-    },
-    {
       "title": "ZLZ UI 官网",
       "frontmatter": {},
       "regularPath": "/",
@@ -36,24 +26,14 @@ export const siteData = {
       "path": "/components/grid.html"
     },
     {
-      "title": "Layout-布局",
+      "title": "Button",
       "frontmatter": {
-        "title": "Layout-布局"
+        "title": "Button"
       },
-      "regularPath": "/components/layout.html",
-      "relativePath": "components/layout.md",
-      "key": "v-3d016989",
-      "path": "/components/layout.html"
-    },
-    {
-      "title": "Tabs-标签",
-      "frontmatter": {
-        "title": "Tabs-标签"
-      },
-      "regularPath": "/components/tabs.html",
-      "relativePath": "components/tabs.md",
-      "key": "v-3aba1c49",
-      "path": "/components/tabs.html"
+      "regularPath": "/components/button.html",
+      "relativePath": "components/button.md",
+      "key": "v-7aed3489",
+      "path": "/components/button.html"
     },
     {
       "title": "Input",
@@ -66,14 +46,32 @@ export const siteData = {
       "path": "/components/input.html"
     },
     {
-      "title": "Popover-弹出层",
+      "title": "Layout-布局",
       "frontmatter": {
-        "title": "Popover-弹出层"
+        "title": "Layout-布局"
       },
-      "regularPath": "/components/popover.html",
-      "relativePath": "components/popover.md",
-      "key": "v-f43a7486",
-      "path": "/components/popover.html"
+      "regularPath": "/components/layout.html",
+      "relativePath": "components/layout.md",
+      "key": "v-3d016989",
+      "path": "/components/layout.html"
+    },
+    {
+      "title": "快速上手",
+      "frontmatter": {},
+      "regularPath": "/get-started/",
+      "relativePath": "get-started/README.md",
+      "key": "v-7469fb36",
+      "path": "/get-started/"
+    },
+    {
+      "title": "Tabs-标签",
+      "frontmatter": {
+        "title": "Tabs-标签"
+      },
+      "regularPath": "/components/tabs.html",
+      "relativePath": "components/tabs.md",
+      "key": "v-3aba1c49",
+      "path": "/components/tabs.html"
     },
     {
       "title": "Toast",
@@ -86,6 +84,16 @@ export const siteData = {
       "path": "/components/toast.html"
     },
     {
+      "title": "Popover-弹出层",
+      "frontmatter": {
+        "title": "Popover-弹出层"
+      },
+      "regularPath": "/components/popover.html",
+      "relativePath": "components/popover.md",
+      "key": "v-f43a7486",
+      "path": "/components/popover.html"
+    },
+    {
       "title": "安装",
       "frontmatter": {
         "title": "安装"
@@ -94,14 +102,6 @@ export const siteData = {
       "relativePath": "install/README.md",
       "key": "v-0fe756d8",
       "path": "/install/"
-    },
-    {
-      "title": "快速上手",
-      "frontmatter": {},
-      "regularPath": "/get-started/",
-      "relativePath": "get-started/README.md",
-      "key": "v-7469fb36",
-      "path": "/get-started/"
     },
     {
       "title": "MacOs",
@@ -138,6 +138,7 @@ export const siteData = {
     "sidebar": [
       {
         "title": "入门",
+        "collapsable": false,
         "children": [
           "/install/",
           "/get-started/"
@@ -145,6 +146,7 @@ export const siteData = {
       },
       {
         "title": "组件",
+        "collapsable": false,
         "children": [
           "/components/button",
           "/components/grid",
