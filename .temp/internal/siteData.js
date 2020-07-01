@@ -4,27 +4,9 @@
 export const siteData = {
   "title": "ZLZ UI",
   "description": "一个好用的UI框架",
-  "base": "/",
+  "base": "/zlz/",
   "headTags": [],
   "pages": [
-    {
-      "title": "ZLZ UI 官网",
-      "frontmatter": {},
-      "regularPath": "/",
-      "relativePath": "README.md",
-      "key": "v-2986c4bf",
-      "path": "/"
-    },
-    {
-      "title": "组件",
-      "frontmatter": {
-        "title": "组件"
-      },
-      "regularPath": "/components/",
-      "relativePath": "components/README.md",
-      "key": "v-280c17a2",
-      "path": "/components/"
-    },
     {
       "title": "Button",
       "frontmatter": {
@@ -36,12 +18,72 @@ export const siteData = {
       "path": "/components/button.html"
     },
     {
-      "title": "快速上手",
+      "title": "ZLZ UI 官网",
       "frontmatter": {},
-      "regularPath": "/get-started/",
-      "relativePath": "get-started/README.md",
-      "key": "v-7469fb36",
-      "path": "/get-started/"
+      "regularPath": "/",
+      "relativePath": "README.md",
+      "key": "v-2986c4bf",
+      "path": "/"
+    },
+    {
+      "title": "Grid",
+      "frontmatter": {
+        "title": "Grid"
+      },
+      "regularPath": "/components/grid.html",
+      "relativePath": "components/grid.md",
+      "key": "v-586e3d6e",
+      "path": "/components/grid.html"
+    },
+    {
+      "title": "Layout-布局",
+      "frontmatter": {
+        "title": "Layout-布局"
+      },
+      "regularPath": "/components/layout.html",
+      "relativePath": "components/layout.md",
+      "key": "v-3d016989",
+      "path": "/components/layout.html"
+    },
+    {
+      "title": "Tabs-标签",
+      "frontmatter": {
+        "title": "Tabs-标签"
+      },
+      "regularPath": "/components/tabs.html",
+      "relativePath": "components/tabs.md",
+      "key": "v-3aba1c49",
+      "path": "/components/tabs.html"
+    },
+    {
+      "title": "Input",
+      "frontmatter": {
+        "title": "Input"
+      },
+      "regularPath": "/components/input.html",
+      "relativePath": "components/input.md",
+      "key": "v-53fab833",
+      "path": "/components/input.html"
+    },
+    {
+      "title": "Popover-弹出层",
+      "frontmatter": {
+        "title": "Popover-弹出层"
+      },
+      "regularPath": "/components/popover.html",
+      "relativePath": "components/popover.md",
+      "key": "v-f43a7486",
+      "path": "/components/popover.html"
+    },
+    {
+      "title": "Toast",
+      "frontmatter": {
+        "title": "Toast"
+      },
+      "regularPath": "/components/toast.html",
+      "relativePath": "components/toast.md",
+      "key": "v-ed7abf8e",
+      "path": "/components/toast.html"
     },
     {
       "title": "安装",
@@ -54,12 +96,12 @@ export const siteData = {
       "path": "/install/"
     },
     {
-      "title": "Windows",
+      "title": "快速上手",
       "frontmatter": {},
-      "regularPath": "/install/windows.html",
-      "relativePath": "install/windows.md",
-      "key": "v-0a0646cf",
-      "path": "/install/windows.html"
+      "regularPath": "/get-started/",
+      "relativePath": "get-started/README.md",
+      "key": "v-7469fb36",
+      "path": "/get-started/"
     },
     {
       "title": "MacOs",
@@ -68,6 +110,14 @@ export const siteData = {
       "relativePath": "install/macos.md",
       "key": "v-3363610f",
       "path": "/install/macos.html"
+    },
+    {
+      "title": "Windows",
+      "frontmatter": {},
+      "regularPath": "/install/windows.html",
+      "relativePath": "install/windows.md",
+      "key": "v-0a0646cf",
+      "path": "/install/windows.html"
     }
   ],
   "themeConfig": {
@@ -96,7 +146,13 @@ export const siteData = {
       {
         "title": "组件",
         "children": [
-          "/components/button"
+          "/components/button",
+          "/components/grid",
+          "/components/input",
+          "/components/layout",
+          "/components/popover",
+          "/components/tabs",
+          "/components/toast"
         ]
       }
     ]
