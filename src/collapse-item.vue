@@ -27,6 +27,7 @@ export default {
   },
   inject: ["eventBus"],
   mounted() {
+      //所有内容的显示均由父组件来更新，实现单向数据流
     this.eventBus &&
       this.eventBus.$on("update:selected", (names) => {
         if (names.indexOf(this.name) >= 0) {
@@ -38,6 +39,7 @@ export default {
       });
   },
   methods: {
+    //点击 告诉父组件 更新选中数组
     toggle() {
       if (this.open) {
         this.eventBus && this.eventBus.$emit("update:removeSelected", this.name);

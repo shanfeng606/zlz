@@ -13,22 +13,22 @@
 }
 }
 .g-button[data-v-2dd9c3] {
-  font-size: var(--font-size);
-  height: var(--button-height);
+  font-size: 14px;
+  height: 32px;
   padding: 0 1em;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  background: var(--button-bg);
+  border-radius: 4px;
+  border: 1px solid #999;
+  background: white;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
 }
 .g-button[data-v-2dd9c3]:hover {
-    border-color: var(--border-color-hover);
+    border-color: #666;
 }
 .g-button[data-v-2dd9c3]:active {
-    background-color: var(--button-active-bg);
+    background-color: #eee;
 }
 .g-button[data-v-2dd9c3]:focus {
     outline: none;

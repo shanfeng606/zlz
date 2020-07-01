@@ -65,12 +65,16 @@
 
 <body>
   <div id="app" style="padding:100px">
-    <g-collapse :selected.sync="selectedTab" single>
+    <g-button>默认按钮</g-button>
+      <g-button icon="setting">默认按钮</g-button>
+      <g-button :loading="true">默认按钮</g-button>
+      <g-button disabled>默认按钮</g-button>
+    <!-- <g-collapse :selected.sync="selectedTab" single>
       <g-collapse-item title="标题1" name="1">内容一</g-collapse-item>
       <g-collapse-item title="标题2" name="2">内容二</g-collapse-item>
       <g-collapse-item title="标题3" name="3">内容三</g-collapse-item>
     </g-collapse>
-{{selectedTab}}
+{{selectedTab}} -->
 
   </div>
    
@@ -185,7 +189,7 @@
       </div> -->
   </div>
   <script src="./src/app.js"></script>
-  <script src="//at.alicdn.com/t/font_1878994_ctgjepvebk7.js"></script>
+  <!-- <script src="//at.alicdn.com/t/font_1878994_ctgjepvebk7.js"></script> -->
 </body>
 
 </html>
