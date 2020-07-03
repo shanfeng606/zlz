@@ -3,15 +3,15 @@
  */
 export default {
   "v-2986c4bf": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\README.md"),
-  "v-53fab833": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\components\\input.md"),
   "v-7aed3489": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\components\\button.md"),
   "v-586e3d6e": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\components\\grid.md"),
-  "v-ed7abf8e": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\components\\toast.md"),
-  "v-f43a7486": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\components\\popover.md"),
-  "v-7469fb36": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\get-started\\README.md"),
+  "v-53fab833": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\components\\input.md"),
   "v-3d016989": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\components\\layout.md"),
+  "v-f43a7486": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\components\\popover.md"),
   "v-3aba1c49": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\components\\tabs.md"),
+  "v-ed7abf8e": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\components\\toast.md"),
+  "v-7469fb36": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\get-started\\README.md"),
   "v-0fe756d8": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\install\\README.md"),
-  "v-0a0646cf": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\install\\windows.md"),
-  "v-3363610f": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\install\\macos.md") 
+  "v-3363610f": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\install\\macos.md"),
+  "v-0a0646cf": () => import("C:\\Users\\lenovo\\Desktop\\zlz\\docs\\install\\windows.md") 
 }

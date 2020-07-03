@@ -16,16 +16,6 @@ export const siteData = {
       "path": "/"
     },
     {
-      "title": "Input",
-      "frontmatter": {
-        "title": "Input"
-      },
-      "regularPath": "/components/input.html",
-      "relativePath": "components/input.md",
-      "key": "v-53fab833",
-      "path": "/components/input.html"
-    },
-    {
       "title": "Button",
       "frontmatter": {
         "title": "Button"
@@ -46,32 +36,14 @@ export const siteData = {
       "path": "/components/grid.html"
     },
     {
-      "title": "Toast",
+      "title": "Input",
       "frontmatter": {
-        "title": "Toast"
+        "title": "Input"
       },
-      "regularPath": "/components/toast.html",
-      "relativePath": "components/toast.md",
-      "key": "v-ed7abf8e",
-      "path": "/components/toast.html"
-    },
-    {
-      "title": "Popover-弹出层",
-      "frontmatter": {
-        "title": "Popover-弹出层"
-      },
-      "regularPath": "/components/popover.html",
-      "relativePath": "components/popover.md",
-      "key": "v-f43a7486",
-      "path": "/components/popover.html"
-    },
-    {
-      "title": "快速上手",
-      "frontmatter": {},
-      "regularPath": "/get-started/",
-      "relativePath": "get-started/README.md",
-      "key": "v-7469fb36",
-      "path": "/get-started/"
+      "regularPath": "/components/input.html",
+      "relativePath": "components/input.md",
+      "key": "v-53fab833",
+      "path": "/components/input.html"
     },
     {
       "title": "Layout-布局",
@@ -84,6 +56,16 @@ export const siteData = {
       "path": "/components/layout.html"
     },
     {
+      "title": "Popover-弹出层",
+      "frontmatter": {
+        "title": "Popover-弹出层"
+      },
+      "regularPath": "/components/popover.html",
+      "relativePath": "components/popover.md",
+      "key": "v-f43a7486",
+      "path": "/components/popover.html"
+    },
+    {
       "title": "Tabs-标签",
       "frontmatter": {
         "title": "Tabs-标签"
@@ -92,6 +74,24 @@ export const siteData = {
       "relativePath": "components/tabs.md",
       "key": "v-3aba1c49",
       "path": "/components/tabs.html"
+    },
+    {
+      "title": "Toast",
+      "frontmatter": {
+        "title": "Toast"
+      },
+      "regularPath": "/components/toast.html",
+      "relativePath": "components/toast.md",
+      "key": "v-ed7abf8e",
+      "path": "/components/toast.html"
+    },
+    {
+      "title": "快速上手",
+      "frontmatter": {},
+      "regularPath": "/get-started/",
+      "relativePath": "get-started/README.md",
+      "key": "v-7469fb36",
+      "path": "/get-started/"
     },
     {
       "title": "安装",
@@ -104,20 +104,20 @@ export const siteData = {
       "path": "/install/"
     },
     {
-      "title": "Windows",
-      "frontmatter": {},
-      "regularPath": "/install/windows.html",
-      "relativePath": "install/windows.md",
-      "key": "v-0a0646cf",
-      "path": "/install/windows.html"
-    },
-    {
       "title": "MacOs",
       "frontmatter": {},
       "regularPath": "/install/macos.html",
       "relativePath": "install/macos.md",
       "key": "v-3363610f",
       "path": "/install/macos.html"
+    },
+    {
+      "title": "Windows",
+      "frontmatter": {},
+      "regularPath": "/install/windows.html",
+      "relativePath": "install/windows.md",
+      "key": "v-0a0646cf",
+      "path": "/install/windows.html"
     }
   ],
   "themeConfig": {
