@@ -6,7 +6,7 @@
     </p>
 
     <g-layout style="color: white; overflow:hidden; margin-bottom:50px;">
-      <g-sider style=" background:#ddd; width:200px; color: black;">
+      <g-sider style=" background:#d0e9ff; width:200px; color: black;">
         sider
       </g-sider>
       <g-layout>
