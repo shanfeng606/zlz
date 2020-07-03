@@ -16,16 +16,6 @@ export const siteData = {
       "path": "/"
     },
     {
-      "title": "Grid",
-      "frontmatter": {
-        "title": "Grid"
-      },
-      "regularPath": "/components/grid.html",
-      "relativePath": "components/grid.md",
-      "key": "v-586e3d6e",
-      "path": "/components/grid.html"
-    },
-    {
       "title": "Button",
       "frontmatter": {
         "title": "Button"
@@ -34,6 +24,16 @@ export const siteData = {
       "relativePath": "components/button.md",
       "key": "v-7aed3489",
       "path": "/components/button.html"
+    },
+    {
+      "title": "Grid",
+      "frontmatter": {
+        "title": "Grid"
+      },
+      "regularPath": "/components/grid.html",
+      "relativePath": "components/grid.md",
+      "key": "v-586e3d6e",
+      "path": "/components/grid.html"
     },
     {
       "title": "Input",
@@ -56,24 +56,6 @@ export const siteData = {
       "path": "/components/layout.html"
     },
     {
-      "title": "快速上手",
-      "frontmatter": {},
-      "regularPath": "/get-started/",
-      "relativePath": "get-started/README.md",
-      "key": "v-7469fb36",
-      "path": "/get-started/"
-    },
-    {
-      "title": "Tabs-标签",
-      "frontmatter": {
-        "title": "Tabs-标签"
-      },
-      "regularPath": "/components/tabs.html",
-      "relativePath": "components/tabs.md",
-      "key": "v-3aba1c49",
-      "path": "/components/tabs.html"
-    },
-    {
       "title": "Toast",
       "frontmatter": {
         "title": "Toast"
@@ -92,6 +74,24 @@ export const siteData = {
       "relativePath": "components/popover.md",
       "key": "v-f43a7486",
       "path": "/components/popover.html"
+    },
+    {
+      "title": "Tabs-标签",
+      "frontmatter": {
+        "title": "Tabs-标签"
+      },
+      "regularPath": "/components/tabs.html",
+      "relativePath": "components/tabs.md",
+      "key": "v-3aba1c49",
+      "path": "/components/tabs.html"
+    },
+    {
+      "title": "快速上手",
+      "frontmatter": {},
+      "regularPath": "/get-started/",
+      "relativePath": "get-started/README.md",
+      "key": "v-7469fb36",
+      "path": "/get-started/"
     },
     {
       "title": "安装",

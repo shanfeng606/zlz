@@ -21,19 +21,19 @@ export const routes = [
     redirect: "/"
   },
   {
-    name: "v-586e3d6e",
-    path: "/components/grid.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-586e3d6e").then(next)
-    },
-  },
-  {
     name: "v-7aed3489",
     path: "/components/button.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-7aed3489").then(next)
+    },
+  },
+  {
+    name: "v-586e3d6e",
+    path: "/components/grid.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-586e3d6e").then(next)
     },
   },
   {
@@ -53,26 +53,6 @@ export const routes = [
     },
   },
   {
-    name: "v-7469fb36",
-    path: "/get-started/",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-7469fb36").then(next)
-    },
-  },
-  {
-    path: "/get-started/index.html",
-    redirect: "/get-started/"
-  },
-  {
-    name: "v-3aba1c49",
-    path: "/components/tabs.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-3aba1c49").then(next)
-    },
-  },
-  {
     name: "v-ed7abf8e",
     path: "/components/toast.html",
     component: GlobalLayout,
@@ -87,6 +67,26 @@ export const routes = [
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-f43a7486").then(next)
     },
+  },
+  {
+    name: "v-3aba1c49",
+    path: "/components/tabs.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-3aba1c49").then(next)
+    },
+  },
+  {
+    name: "v-7469fb36",
+    path: "/get-started/",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-7469fb36").then(next)
+    },
+  },
+  {
+    path: "/get-started/index.html",
+    redirect: "/get-started/"
   },
   {
     name: "v-0fe756d8",
