@@ -21,6 +21,14 @@ export const routes = [
     redirect: "/"
   },
   {
+    name: "v-53fab833",
+    path: "/components/input.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-53fab833").then(next)
+    },
+  },
+  {
     name: "v-7aed3489",
     path: "/components/button.html",
     component: GlobalLayout,
@@ -34,22 +42,6 @@ export const routes = [
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-586e3d6e").then(next)
-    },
-  },
-  {
-    name: "v-53fab833",
-    path: "/components/input.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-53fab833").then(next)
-    },
-  },
-  {
-    name: "v-3d016989",
-    path: "/components/layout.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-3d016989").then(next)
     },
   },
   {
@@ -69,14 +61,6 @@ export const routes = [
     },
   },
   {
-    name: "v-3aba1c49",
-    path: "/components/tabs.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-3aba1c49").then(next)
-    },
-  },
-  {
     name: "v-7469fb36",
     path: "/get-started/",
     component: GlobalLayout,
@@ -87,6 +71,22 @@ export const routes = [
   {
     path: "/get-started/index.html",
     redirect: "/get-started/"
+  },
+  {
+    name: "v-3d016989",
+    path: "/components/layout.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-3d016989").then(next)
+    },
+  },
+  {
+    name: "v-3aba1c49",
+    path: "/components/tabs.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-3aba1c49").then(next)
+    },
   },
   {
     name: "v-0fe756d8",
@@ -101,19 +101,19 @@ export const routes = [
     redirect: "/install/"
   },
   {
-    name: "v-3363610f",
-    path: "/install/macos.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-3363610f").then(next)
-    },
-  },
-  {
     name: "v-0a0646cf",
     path: "/install/windows.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-0a0646cf").then(next)
+    },
+  },
+  {
+    name: "v-3363610f",
+    path: "/install/macos.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-3363610f").then(next)
     },
   },
   {

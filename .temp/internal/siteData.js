@@ -16,6 +16,16 @@ export const siteData = {
       "path": "/"
     },
     {
+      "title": "Input",
+      "frontmatter": {
+        "title": "Input"
+      },
+      "regularPath": "/components/input.html",
+      "relativePath": "components/input.md",
+      "key": "v-53fab833",
+      "path": "/components/input.html"
+    },
+    {
       "title": "Button",
       "frontmatter": {
         "title": "Button"
@@ -34,26 +44,6 @@ export const siteData = {
       "relativePath": "components/grid.md",
       "key": "v-586e3d6e",
       "path": "/components/grid.html"
-    },
-    {
-      "title": "Input",
-      "frontmatter": {
-        "title": "Input"
-      },
-      "regularPath": "/components/input.html",
-      "relativePath": "components/input.md",
-      "key": "v-53fab833",
-      "path": "/components/input.html"
-    },
-    {
-      "title": "Layout-布局",
-      "frontmatter": {
-        "title": "Layout-布局"
-      },
-      "regularPath": "/components/layout.html",
-      "relativePath": "components/layout.md",
-      "key": "v-3d016989",
-      "path": "/components/layout.html"
     },
     {
       "title": "Toast",
@@ -76,6 +66,24 @@ export const siteData = {
       "path": "/components/popover.html"
     },
     {
+      "title": "快速上手",
+      "frontmatter": {},
+      "regularPath": "/get-started/",
+      "relativePath": "get-started/README.md",
+      "key": "v-7469fb36",
+      "path": "/get-started/"
+    },
+    {
+      "title": "Layout-布局",
+      "frontmatter": {
+        "title": "Layout-布局"
+      },
+      "regularPath": "/components/layout.html",
+      "relativePath": "components/layout.md",
+      "key": "v-3d016989",
+      "path": "/components/layout.html"
+    },
+    {
       "title": "Tabs-标签",
       "frontmatter": {
         "title": "Tabs-标签"
@@ -84,14 +92,6 @@ export const siteData = {
       "relativePath": "components/tabs.md",
       "key": "v-3aba1c49",
       "path": "/components/tabs.html"
-    },
-    {
-      "title": "快速上手",
-      "frontmatter": {},
-      "regularPath": "/get-started/",
-      "relativePath": "get-started/README.md",
-      "key": "v-7469fb36",
-      "path": "/get-started/"
     },
     {
       "title": "安装",
@@ -104,20 +104,20 @@ export const siteData = {
       "path": "/install/"
     },
     {
-      "title": "MacOs",
-      "frontmatter": {},
-      "regularPath": "/install/macos.html",
-      "relativePath": "install/macos.md",
-      "key": "v-3363610f",
-      "path": "/install/macos.html"
-    },
-    {
       "title": "Windows",
       "frontmatter": {},
       "regularPath": "/install/windows.html",
       "relativePath": "install/windows.md",
       "key": "v-0a0646cf",
       "path": "/install/windows.html"
+    },
+    {
+      "title": "MacOs",
+      "frontmatter": {},
+      "regularPath": "/install/macos.html",
+      "relativePath": "install/macos.md",
+      "key": "v-3363610f",
+      "path": "/install/macos.html"
     }
   ],
   "themeConfig": {
