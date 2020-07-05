@@ -16,14 +16,14 @@ export const siteData = {
       "path": "/"
     },
     {
-      "title": "Button",
+      "title": "Input",
       "frontmatter": {
-        "title": "Button"
+        "title": "Input"
       },
-      "regularPath": "/components/button.html",
-      "relativePath": "components/button.md",
-      "key": "v-7aed3489",
-      "path": "/components/button.html"
+      "regularPath": "/components/input.html",
+      "relativePath": "components/input.md",
+      "key": "v-53fab833",
+      "path": "/components/input.html"
     },
     {
       "title": "Grid",
@@ -36,24 +36,14 @@ export const siteData = {
       "path": "/components/grid.html"
     },
     {
-      "title": "Input",
+      "title": "Button",
       "frontmatter": {
-        "title": "Input"
+        "title": "Button"
       },
-      "regularPath": "/components/input.html",
-      "relativePath": "components/input.md",
-      "key": "v-53fab833",
-      "path": "/components/input.html"
-    },
-    {
-      "title": "Layout-布局",
-      "frontmatter": {
-        "title": "Layout-布局"
-      },
-      "regularPath": "/components/layout.html",
-      "relativePath": "components/layout.md",
-      "key": "v-3d016989",
-      "path": "/components/layout.html"
+      "regularPath": "/components/button.html",
+      "relativePath": "components/button.md",
+      "key": "v-7aed3489",
+      "path": "/components/button.html"
     },
     {
       "title": "Popover-弹出层",
@@ -64,6 +54,16 @@ export const siteData = {
       "relativePath": "components/popover.md",
       "key": "v-f43a7486",
       "path": "/components/popover.html"
+    },
+    {
+      "title": "Layout-布局",
+      "frontmatter": {
+        "title": "Layout-布局"
+      },
+      "regularPath": "/components/layout.html",
+      "relativePath": "components/layout.md",
+      "key": "v-3d016989",
+      "path": "/components/layout.html"
     },
     {
       "title": "Tabs-标签",
