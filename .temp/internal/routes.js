@@ -29,27 +29,11 @@ export const routes = [
     },
   },
   {
-    name: "v-586e3d6e",
-    path: "/components/grid.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-586e3d6e").then(next)
-    },
-  },
-  {
     name: "v-7aed3489",
     path: "/components/button.html",
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-7aed3489").then(next)
-    },
-  },
-  {
-    name: "v-f43a7486",
-    path: "/components/popover.html",
-    component: GlobalLayout,
-    beforeEnter: (to, from, next) => {
-      ensureAsyncComponentsLoaded("Layout", "v-f43a7486").then(next)
     },
   },
   {
@@ -66,6 +50,22 @@ export const routes = [
     component: GlobalLayout,
     beforeEnter: (to, from, next) => {
       ensureAsyncComponentsLoaded("Layout", "v-3aba1c49").then(next)
+    },
+  },
+  {
+    name: "v-586e3d6e",
+    path: "/components/grid.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-586e3d6e").then(next)
+    },
+  },
+  {
+    name: "v-f43a7486",
+    path: "/components/popover.html",
+    component: GlobalLayout,
+    beforeEnter: (to, from, next) => {
+      ensureAsyncComponentsLoaded("Layout", "v-f43a7486").then(next)
     },
   },
   {

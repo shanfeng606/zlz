@@ -26,16 +26,6 @@ export const siteData = {
       "path": "/components/input.html"
     },
     {
-      "title": "Grid",
-      "frontmatter": {
-        "title": "Grid"
-      },
-      "regularPath": "/components/grid.html",
-      "relativePath": "components/grid.md",
-      "key": "v-586e3d6e",
-      "path": "/components/grid.html"
-    },
-    {
       "title": "Button",
       "frontmatter": {
         "title": "Button"
@@ -44,16 +34,6 @@ export const siteData = {
       "relativePath": "components/button.md",
       "key": "v-7aed3489",
       "path": "/components/button.html"
-    },
-    {
-      "title": "Popover-弹出层",
-      "frontmatter": {
-        "title": "Popover-弹出层"
-      },
-      "regularPath": "/components/popover.html",
-      "relativePath": "components/popover.md",
-      "key": "v-f43a7486",
-      "path": "/components/popover.html"
     },
     {
       "title": "Layout-布局",
@@ -74,6 +54,26 @@ export const siteData = {
       "relativePath": "components/tabs.md",
       "key": "v-3aba1c49",
       "path": "/components/tabs.html"
+    },
+    {
+      "title": "Grid",
+      "frontmatter": {
+        "title": "Grid"
+      },
+      "regularPath": "/components/grid.html",
+      "relativePath": "components/grid.md",
+      "key": "v-586e3d6e",
+      "path": "/components/grid.html"
+    },
+    {
+      "title": "Popover-弹出层",
+      "frontmatter": {
+        "title": "Popover-弹出层"
+      },
+      "regularPath": "/components/popover.html",
+      "relativePath": "components/popover.md",
+      "key": "v-f43a7486",
+      "path": "/components/popover.html"
     },
     {
       "title": "Toast",
