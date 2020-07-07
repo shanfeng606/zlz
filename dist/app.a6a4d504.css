@@ -1064,6 +1064,7 @@
   transform: translateX(-50%);
 }
 .wrapper.position-top[data-v-1b4b69] {
+    z-index: 999;
     top: 0;
 }
 .wrapper.position-top .toast[data-v-1b4b69] {

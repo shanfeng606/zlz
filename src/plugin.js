@@ -1,7 +1,5 @@
 import Toast from "./toast";
 
-
-
 let currentToast
 
 export default {
@@ -21,7 +19,6 @@ export default {
     };
   },
 };
-
 
 
 // 创建toast的函数

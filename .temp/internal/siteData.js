@@ -16,16 +16,6 @@ export const siteData = {
       "path": "/"
     },
     {
-      "title": "Input",
-      "frontmatter": {
-        "title": "Input"
-      },
-      "regularPath": "/components/input.html",
-      "relativePath": "components/input.md",
-      "key": "v-53fab833",
-      "path": "/components/input.html"
-    },
-    {
       "title": "Button",
       "frontmatter": {
         "title": "Button"
@@ -34,26 +24,6 @@ export const siteData = {
       "relativePath": "components/button.md",
       "key": "v-7aed3489",
       "path": "/components/button.html"
-    },
-    {
-      "title": "Layout-布局",
-      "frontmatter": {
-        "title": "Layout-布局"
-      },
-      "regularPath": "/components/layout.html",
-      "relativePath": "components/layout.md",
-      "key": "v-3d016989",
-      "path": "/components/layout.html"
-    },
-    {
-      "title": "Tabs-标签",
-      "frontmatter": {
-        "title": "Tabs-标签"
-      },
-      "regularPath": "/components/tabs.html",
-      "relativePath": "components/tabs.md",
-      "key": "v-3aba1c49",
-      "path": "/components/tabs.html"
     },
     {
       "title": "Grid",
@@ -66,6 +36,26 @@ export const siteData = {
       "path": "/components/grid.html"
     },
     {
+      "title": "Input",
+      "frontmatter": {
+        "title": "Input"
+      },
+      "regularPath": "/components/input.html",
+      "relativePath": "components/input.md",
+      "key": "v-53fab833",
+      "path": "/components/input.html"
+    },
+    {
+      "title": "Layout-布局",
+      "frontmatter": {
+        "title": "Layout-布局"
+      },
+      "regularPath": "/components/layout.html",
+      "relativePath": "components/layout.md",
+      "key": "v-3d016989",
+      "path": "/components/layout.html"
+    },
+    {
       "title": "Popover-弹出层",
       "frontmatter": {
         "title": "Popover-弹出层"
@@ -74,6 +64,16 @@ export const siteData = {
       "relativePath": "components/popover.md",
       "key": "v-f43a7486",
       "path": "/components/popover.html"
+    },
+    {
+      "title": "Tabs-标签",
+      "frontmatter": {
+        "title": "Tabs-标签"
+      },
+      "regularPath": "/components/tabs.html",
+      "relativePath": "components/tabs.md",
+      "key": "v-3aba1c49",
+      "path": "/components/tabs.html"
     },
     {
       "title": "Toast",

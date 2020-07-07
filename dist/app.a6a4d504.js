@@ -13486,18 +13486,29 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _vue = _interopRequireDefault(require("vue"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// import Vue from "vue";
 var _default = {
   name: "zlzToast",
   props: {
     autoClose: {
       type: [Boolean, Number],
-      default: 5,
+      default: 5000,
       validator: function validator(value) {
         if (value === false || typeof value === 'number') {
           return true;
@@ -13528,8 +13539,8 @@ var _default = {
     }
   },
   mounted: function mounted() {
-    this.execAutoClose();
     this.updateStyles();
+    this.execAutoClose();
   },
   computed: {
     toastClasses: function toastClasses() {
@@ -13559,10 +13570,11 @@ var _default = {
       this.$destroy();
     },
     onClickClose: function onClickClose() {
+      console.log(1);
       this.close();
 
       if (this.closeButton && typeof this.closeButton.callback === "function") {
-        this.closeButton.callback();
+        this.closeButton.callback(this);
       }
     }
   }
@@ -13640,7 +13652,7 @@ render._withStripped = true
       
       }
     })();
-},{"vue":"node_modules/vue/dist/vue.common.js","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"src/plugin.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/plugin.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

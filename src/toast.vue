@@ -13,21 +13,20 @@
 </template>
 
 <script>
-import Vue from "vue";
+// import Vue from "vue";
 export default {
   name: "zlzToast",
   props: {
     autoClose: {
       type: [Boolean, Number],
-      default: 5,
+      default: 5000,
       validator(value){
         if(value===false || typeof value === 'number'){
           return true
         }else{
           return false
         }
-      }
-      
+      }    
     },
     closeButton: {
       type: Object,
@@ -52,10 +51,9 @@ export default {
   },
 
   mounted() {
-    this.execAutoClose();
     this.updateStyles();
+    this.execAutoClose();
   },
-
   computed: {
     toastClasses() {
       return {
@@ -85,9 +83,10 @@ export default {
       this.$destroy();
     },
     onClickClose() {
+      console.log(1)
       this.close();
       if (this.closeButton && typeof this.closeButton.callback === "function") {
-        this.closeButton.callback();
+        this.closeButton.callback(this);
       }
     }
   }
@@ -132,6 +131,7 @@ $toast-bg: rgba(0, 0, 0, 0.75);
   transform: translateX(-50%);
   $animation-duration: 300ms;
   &.position-top {
+    z-index:999;
     top: 0;
     .toast {
       border-top-left-radius: 0;
