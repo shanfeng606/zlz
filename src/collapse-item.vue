@@ -9,7 +9,9 @@
 
 <script>
 export default {
+
   name: "zlzCollapseItem",
+
   props: {
     title: {
       type: String,

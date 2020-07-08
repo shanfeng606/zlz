@@ -14665,7 +14665,192 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/cascader-item.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  name: "ZlzCascaderItem",
+  props: {
+    sourceItem: {
+      type: Object
+    }
+  }
+};
+exports.default = _default;
+        var $b98bd9 = exports.default || module.exports;
+      
+      if (typeof $b98bd9 === 'function') {
+        $b98bd9 = $b98bd9.options;
+      }
+    
+        /* template */
+        Object.assign($b98bd9, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "cascaderItem" },
+    [
+      _vm._v("\n  " + _vm._s(_vm.sourceItem.name) + "\n  "),
+      _vm._l(_vm.sourceItem.children, function(item) {
+        return _vm.sourceItem.children
+          ? _c("zlz-cascader-item", { attrs: { sourceItem: item } })
+          : _vm._e()
+      })
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$b98bd9', $b98bd9);
+          } else {
+            api.reload('$b98bd9', $b98bd9);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/cascader.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _cascaderItem = _interopRequireDefault(require("./cascader-item"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  name: "zlzCascader",
+  components: {
+    CascaderItem: _cascaderItem.default
+  },
+  props: {
+    source: {
+      type: Array
+    }
+  }
+};
+exports.default = _default;
+        var $14210b = exports.default || module.exports;
+      
+      if (typeof $14210b === 'function') {
+        $14210b = $14210b.options;
+      }
+    
+        /* template */
+        Object.assign($14210b, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "cascader" }, [
+    _c("div", { staticClass: "trigger" }, [_vm._t("default")], 2),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "popover" },
+      _vm._l(_vm.source, function(item) {
+        return _c(
+          "div",
+          [_c("cascader-item", { attrs: { sourceItem: item } })],
+          1
+        )
+      }),
+      0
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-14210b",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$14210b', $14210b);
+          } else {
+            api.reload('$14210b', $14210b);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"./cascader-item":"src/cascader-item.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
@@ -14712,6 +14897,8 @@ var _collapse = _interopRequireDefault(require("./collapse"));
 
 var _collapseItem = _interopRequireDefault(require("./collapse-item"));
 
+var _cascader = _interopRequireDefault(require("./cascader"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue.default.component("g-button", _button.default);
@@ -14756,10 +14943,45 @@ _vue.default.component('g-collapse', _collapse.default);
 
 _vue.default.component('g-collapse-item', _collapseItem.default);
 
+_vue.default.component('g-cascader', _cascader.default);
+
 new _vue.default({
   el: "#app",
   data: {
-    selectedTab: ['2', '1']
+    source: [{
+      name: '浙江',
+      children: [{
+        name: '杭州',
+        children: [{
+          name: '上城'
+        }, {
+          name: '上城'
+        }, {
+          name: '上城'
+        }]
+      }, {
+        name: '嘉兴',
+        children: [{
+          name: '上城'
+        }, {
+          name: '上城'
+        }, {
+          name: '上城'
+        }]
+      }]
+    }, {
+      name: '福建',
+      children: [{
+        name: '福州',
+        children: [{
+          name: '上城'
+        }, {
+          name: '上城'
+        }, {
+          name: '上城'
+        }]
+      }]
+    }]
   },
   created: function created() {},
   methods: {
@@ -14790,7 +15012,7 @@ new _vue.default({
     }
   }
 });
-},{"vue":"node_modules/vue/dist/vue.common.js","./button/button":"src/button/button.vue","./icon":"src/icon.vue","./button/button-group":"src/button/button-group.vue","./input":"src/input.vue","./grid/row":"src/grid/row.vue","./grid/col":"src/grid/col.vue","./layout/layout":"src/layout/layout.vue","./layout/header":"src/layout/header.vue","./layout/sider":"src/layout/sider.vue","./layout/content":"src/layout/content.vue","./layout/footer":"src/layout/footer.vue","./toast":"src/toast.vue","./plugin":"src/plugin.js","./tabs/tabs":"src/tabs/tabs.vue","./tabs/tabs-head":"src/tabs/tabs-head.vue","./tabs/tabs-body":"src/tabs/tabs-body.vue","./tabs/tabs-item":"src/tabs/tabs-item.vue","./tabs/tabs-pane":"src/tabs/tabs-pane.vue","./popover":"src/popover.vue","./collapse":"src/collapse.vue","./collapse-item":"src/collapse-item.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","./button/button":"src/button/button.vue","./icon":"src/icon.vue","./button/button-group":"src/button/button-group.vue","./input":"src/input.vue","./grid/row":"src/grid/row.vue","./grid/col":"src/grid/col.vue","./layout/layout":"src/layout/layout.vue","./layout/header":"src/layout/header.vue","./layout/sider":"src/layout/sider.vue","./layout/content":"src/layout/content.vue","./layout/footer":"src/layout/footer.vue","./toast":"src/toast.vue","./plugin":"src/plugin.js","./tabs/tabs":"src/tabs/tabs.vue","./tabs/tabs-head":"src/tabs/tabs-head.vue","./tabs/tabs-body":"src/tabs/tabs-body.vue","./tabs/tabs-item":"src/tabs/tabs-item.vue","./tabs/tabs-pane":"src/tabs/tabs-pane.vue","./popover":"src/popover.vue","./collapse":"src/collapse.vue","./collapse-item":"src/collapse-item.vue","./cascader":"src/cascader.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
