@@ -55,17 +55,17 @@ new Vue({
         {
           name: '杭州',
           children: [
-            { name: '上城' },
-            { name: '上城' },
-            { name: '上城' }
+            { name: '上城1' },
+            { name: '上城1' },
+            { name: '上城1' }
           ]
         },
         {
           name: '嘉兴',
           children: [
-            { name: '上城' },
-            { name: '上城' },
-            { name: '上城' }
+            { name: '上城2' },
+            { name: '上城2' },
+            { name: '上城2' }
           ]
         }
       ]
@@ -75,9 +75,9 @@ new Vue({
         {
           name: '福州',
           children: [
-            { name: '上城' },
-            { name: '上城' },
-            { name: '上城' }
+            { name: '上城3' },
+            { name: '上城3' },
+            { name: '上城3' }
           ]
 
         }

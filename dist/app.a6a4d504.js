@@ -14665,7 +14665,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/cascader-item.vue":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/cascader-items.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14683,40 +14683,73 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   name: "ZlzCascaderItem",
   props: {
-    sourceItem: {
-      type: Object
+    items: {
+      type: Array
+    }
+  },
+  data: function data() {
+    return {
+      leftSelected: null
+    };
+  },
+  computed: {
+    rightItems: function rightItems() {
+      if (this.leftSelected && this.leftSelected.children) {
+        return this.leftSelected.children;
+      } else {
+        return null;
+      }
     }
   }
 };
 exports.default = _default;
-        var $b98bd9 = exports.default || module.exports;
+        var $865f16 = exports.default || module.exports;
       
-      if (typeof $b98bd9 === 'function') {
-        $b98bd9 = $b98bd9.options;
+      if (typeof $865f16 === 'function') {
+        $865f16 = $865f16.options;
       }
     
         /* template */
-        Object.assign($b98bd9, (function () {
+        Object.assign($865f16, (function () {
           var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "cascaderItem" },
-    [
-      _vm._v("\n  " + _vm._s(_vm.sourceItem.name) + "\n  "),
-      _vm._l(_vm.sourceItem.children, function(item) {
-        return _vm.sourceItem.children
-          ? _c("zlz-cascader-item", { attrs: { sourceItem: item } })
-          : _vm._e()
-      })
-    ],
-    2
-  )
+  return _c("div", { staticClass: "cascaderItem" }, [
+    _c(
+      "div",
+      { staticClass: "left" },
+      _vm._l(_vm.items, function(item) {
+        return _c(
+          "div",
+          {
+            staticClass: "label",
+            on: {
+              click: function($event) {
+                _vm.leftSelected = item
+              }
+            }
+          },
+          [_vm._v("\n      " + _vm._s(item.name) + "\n    ")]
+        )
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _vm.rightItems
+      ? _c(
+          "div",
+          { staticClass: "right" },
+          [_c("zlz-cascader-item", { attrs: { items: _vm.rightItems } })],
+          1
+        )
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -14725,7 +14758,7 @@ render._withStripped = true
             render: render,
             staticRenderFns: staticRenderFns,
             _compiled: true,
-            _scopeId: null,
+            _scopeId: "data-v-865f16",
             functional: undefined
           };
         })());
@@ -14738,9 +14771,9 @@ render._withStripped = true
         if (api.compatible) {
           module.hot.accept();
           if (!module.hot.data) {
-            api.createRecord('$b98bd9', $b98bd9);
+            api.createRecord('$865f16', $865f16);
           } else {
-            api.reload('$b98bd9', $b98bd9);
+            api.reload('$865f16', $865f16);
           }
         }
 
@@ -14759,7 +14792,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _cascaderItem = _interopRequireDefault(require("./cascader-item"));
+var _cascaderItems = _interopRequireDefault(require("./cascader-items"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -14773,17 +14806,37 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
-//
-//
-//
 var _default = {
   name: "zlzCascader",
   components: {
-    CascaderItem: _cascaderItem.default
+    CascaderItems: _cascaderItems.default
   },
   props: {
     source: {
       type: Array
+    }
+  },
+  data: function data() {
+    return {
+      popoverVisible: false,
+      level1Selected: null,
+      level2Selected: null
+    };
+  },
+  computed: {
+    level2Items: function level2Items() {
+      if (this.level1Selected) {
+        return this.level1Selected.children;
+      } else {
+        return [];
+      }
+    },
+    level3items: function level3items() {
+      if (this.level2Selected) {
+        return this.level2Selected.children;
+      } else {
+        return [];
+      }
     }
   }
 };
@@ -14801,20 +14854,23 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "cascader" }, [
-    _c("div", { staticClass: "trigger" }, [_vm._t("default")], 2),
+    _c("div", {
+      staticClass: "trigger",
+      on: {
+        click: function($event) {
+          _vm.popoverVisible = !_vm.popoverVisible
+        }
+      }
+    }),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "popover" },
-      _vm._l(_vm.source, function(item) {
-        return _c(
+    _vm.popoverVisible
+      ? _c(
           "div",
-          [_c("cascader-item", { attrs: { sourceItem: item } })],
+          { staticClass: "popover" },
+          [_c("cascader-items", { attrs: { items: _vm.source } })],
           1
         )
-      }),
-      0
-    )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -14850,7 +14906,7 @@ render._withStripped = true
       
       }
     })();
-},{"./cascader-item":"src/cascader-item.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
+},{"./cascader-items":"src/cascader-items.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
 var _vue = _interopRequireDefault(require("vue"));
@@ -14953,20 +15009,20 @@ new _vue.default({
       children: [{
         name: '杭州',
         children: [{
-          name: '上城'
+          name: '上城1'
         }, {
-          name: '上城'
+          name: '上城1'
         }, {
-          name: '上城'
+          name: '上城1'
         }]
       }, {
         name: '嘉兴',
         children: [{
-          name: '上城'
+          name: '上城2'
         }, {
-          name: '上城'
+          name: '上城2'
         }, {
-          name: '上城'
+          name: '上城2'
         }]
       }]
     }, {
@@ -14974,11 +15030,11 @@ new _vue.default({
       children: [{
         name: '福州',
         children: [{
-          name: '上城'
+          name: '上城3'
         }, {
-          name: '上城'
+          name: '上城3'
         }, {
-          name: '上城'
+          name: '上城3'
         }]
       }]
     }]
@@ -15040,7 +15096,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53967" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63468" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

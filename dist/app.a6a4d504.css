@@ -1271,3 +1271,18 @@
   padding: 4px 8px;
 }
 
+.cascaderItem[data-v-865f16] {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cascaderItem .right[data-v-865f16] {
+    margin-top: -1px;
+}
+
+.cascader .trigger[data-v-14210b] {
+  border: 1px solid red;
+  width: 200px;
+  height: 50px;
+}
+
