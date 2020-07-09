@@ -56,6 +56,7 @@ export default{
   .right{
     height: 100%;
     border-left: 1px solid $border-color-light;
+    // background-color: red;
 
   }
   .label{
