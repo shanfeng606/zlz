@@ -2,8 +2,8 @@
   <div class="cascader">
     <div class="trigger" @click="popoverVisible=!popoverVisible">
     </div>
-    <div class="popover" v-if="popoverVisible"> 
-        <cascader-items :items="source"></cascader-items>
+    <div class="popover-wrapper" v-if="popoverVisible"> 
+        <cascader-items :items="source" :height="popoverHeight"></cascader-items>
     </div>
   </div>
 </template>
@@ -16,31 +16,17 @@ export default {
   props: {
     source: {
       type: Array
+    },
+    popoverHeight:{
+      type:String
     }
+
   },
   data(){
     return{
       popoverVisible:false,
-      level1Selected:null,
-      level2Selected:null
     }
   },
-  computed:{
-    level2Items(){
-      if(this.level1Selected){
-        return this.level1Selected.children
-      }else{
-        return []
-      }
-    },
-    level3items(){
-      if(this.level2Selected){
-        return this.level2Selected.children
-      }else{
-        return []
-      }
-    }
-  }
 };
 </script>
 
@@ -48,10 +34,23 @@ export default {
 @import "var";
 
 .cascader {
+  position: relative;
   .trigger{
     border: 1px solid red;
-    width: 200px;
-    height:50px;
+    width: 100px;
+    height:32px;
+  }
+  .popover-wrapper{
+    @extend .box-shadow;
+    // border: 1px solid red;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    display: flex;
+    .label{
+      white-space: nowrap;
+    }
   }
 }
 </style>

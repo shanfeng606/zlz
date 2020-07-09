@@ -14672,6 +14672,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _icon = _interopRequireDefault(require("./icon"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
 //
 //
 //
@@ -14686,10 +14692,16 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: "ZlzCascaderItem",
+  name: "ZlzCascaderItems",
+  components: {
+    Icon: _icon.default
+  },
   props: {
     items: {
       type: Array
+    },
+    height: {
+      type: String
     }
   },
   data: function data() {
@@ -14720,36 +14732,50 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "cascaderItem" }, [
-    _c(
-      "div",
-      { staticClass: "left" },
-      _vm._l(_vm.items, function(item) {
-        return _c(
-          "div",
-          {
-            staticClass: "label",
-            on: {
-              click: function($event) {
-                _vm.leftSelected = item
+  return _c(
+    "div",
+    { staticClass: "cascaderItem", style: { height: _vm.height } },
+    [
+      _c(
+        "div",
+        { staticClass: "left" },
+        _vm._l(_vm.items, function(item) {
+          return _c(
+            "div",
+            {
+              staticClass: "label",
+              on: {
+                click: function($event) {
+                  _vm.leftSelected = item
+                }
               }
-            }
-          },
-          [_vm._v("\n      " + _vm._s(item.name) + "\n    ")]
-        )
-      }),
-      0
-    ),
-    _vm._v(" "),
-    _vm.rightItems
-      ? _c(
-          "div",
-          { staticClass: "right" },
-          [_c("zlz-cascader-item", { attrs: { items: _vm.rightItems } })],
-          1
-        )
-      : _vm._e()
-  ])
+            },
+            [
+              _vm._v("\n      " + _vm._s(item.name) + "\n      "),
+              item.children
+                ? _c("icon", { attrs: { name: "right" } })
+                : _vm._e()
+            ],
+            1
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _vm.rightItems
+        ? _c(
+            "div",
+            { staticClass: "right" },
+            [
+              _c("zlz-cascader-items", {
+                attrs: { items: _vm.rightItems, height: _vm.height }
+              })
+            ],
+            1
+          )
+        : _vm._e()
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -14784,7 +14810,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/cascader.vue":[function(require,module,exports) {
+},{"./icon":"src/icon.vue","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/cascader.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14814,30 +14840,15 @@ var _default = {
   props: {
     source: {
       type: Array
+    },
+    popoverHeight: {
+      type: String
     }
   },
   data: function data() {
     return {
-      popoverVisible: false,
-      level1Selected: null,
-      level2Selected: null
+      popoverVisible: false
     };
-  },
-  computed: {
-    level2Items: function level2Items() {
-      if (this.level1Selected) {
-        return this.level1Selected.children;
-      } else {
-        return [];
-      }
-    },
-    level3items: function level3items() {
-      if (this.level2Selected) {
-        return this.level2Selected.children;
-      } else {
-        return [];
-      }
-    }
   }
 };
 exports.default = _default;
@@ -14866,8 +14877,12 @@ exports.default = _default;
     _vm.popoverVisible
       ? _c(
           "div",
-          { staticClass: "popover" },
-          [_c("cascader-items", { attrs: { items: _vm.source } })],
+          { staticClass: "popover-wrapper" },
+          [
+            _c("cascader-items", {
+              attrs: { items: _vm.source, height: _vm.popoverHeight }
+            })
+          ],
           1
         )
       : _vm._e()
@@ -15096,7 +15111,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63468" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55134" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
