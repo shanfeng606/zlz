@@ -2,8 +2,6 @@
   <div class="cascaderItem" :style="{height:height}">
     <div class="left">
       <div class="label" v-for="item in items" @click="onClickLabel(item)">
-        <!-- {{selected[level].name}} -->
-        {{level}}
         {{item.name}}
         <icon v-if="item.children" name="right"></icon>
       </div>
@@ -81,6 +79,7 @@ export default {
   .left {
     height: 100%;
     padding: 0.3em 0;
+    overflow: auto;
   }
   .right {
     height: 100%;
