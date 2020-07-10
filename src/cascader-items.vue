@@ -9,9 +9,13 @@
       </div>
     </div>
     <div class="right" v-if="rightItems">
-      <zlz-cascader-items :items="rightItems" :height="height" :selected="selected" 
-      @update:selected="onUpdateSelected"
-      :level="level+1"></zlz-cascader-items>
+      <zlz-cascader-items
+        :items="rightItems"
+        :height="height"
+        :selected="selected"
+        @update:selected="onUpdateSelected"
+        :level="level+1"
+      ></zlz-cascader-items>
     </div>
   </div>
 </template>
@@ -34,18 +38,17 @@ export default {
         return [];
       }
     },
-    level:{
-      type:Number,
-      default:0
+    level: {
+      type: Number,
+      default: 0
     }
   },
   data() {
-    return {
-    };
+    return {};
   },
   computed: {
     rightItems() {
-      let currentSelected=this.selected[this.level]
+      let currentSelected = this.selected[this.level];
       if (currentSelected && currentSelected.children) {
         return currentSelected.children;
       } else {
@@ -53,15 +56,16 @@ export default {
       }
     }
   },
-  methods:{
-    onClickLabel(item){   
-      //深拷贝  
-      let copy=JSON.parse(JSON.stringify(this.selected))
-      copy[this.level]=item
-        this.$emit('update:selected',copy)
+  methods: {
+    onClickLabel(item) {
+      //深拷贝
+      let copy = JSON.parse(JSON.stringify(this.selected));
+      copy[this.level] = item;
+      copy.splice(this.level+1)
+      this.$emit("update:selected", copy);
     },
-    onUpdateSelected(newSelected){
-      this.$emit('update:selected',newSelected)
+    onUpdateSelected(newSelected) {
+      this.$emit("update:selected", newSelected);
     }
   }
 };
