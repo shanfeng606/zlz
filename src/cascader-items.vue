@@ -2,8 +2,8 @@
   <div class="cascaderItem" :style="{height:height}">
     <div class="left">
       <div class="label" v-for="item in items" @click="onClickLabel(item)">
-        {{item.name}}
-        <icon v-if="item.children" name="right"></icon>
+        <span class="name">{{item.name}}</span>
+        <icon v-if="rightArrowVisible(item)" name="right"></icon>
       </div>
     </div>
     <div class="right" v-if="rightItems">
@@ -36,6 +36,10 @@ export default {
         return [];
       }
     },
+    loadData:{
+      type:Function
+
+    },
     level: {
       type: Number,
       default: 0
@@ -46,15 +50,19 @@ export default {
   },
   computed: {
     rightItems() {
-      let currentSelected = this.selected[this.level];
-      if (currentSelected && currentSelected.children) {
-        return currentSelected.children;
-      } else {
-        return null;
+      if(this.selected[this.level]){
+        let selected =this.items.filter(item=>item.name===this.selected[this.level].name)
+        if(selected && selected[0].children && selected[0].children.length>0){
+          return selected[0].children
+        }
       }
-    }
+    },
+    
   },
   methods: {
+    rightArrowVisible(item){
+      return this.loadData?!item.isLeaf:item.children
+    },
     onClickLabel(item) {
       //深拷贝
       let copy = JSON.parse(JSON.stringify(this.selected));
@@ -78,8 +86,10 @@ export default {
   // border: 1px solid red;
   .left {
     height: 100%;
+    box-sizing: border-box;
     padding: 0.3em 0;
-    overflow: auto;
+    overflow:auto;
+    // overflow-y:hidden;
   }
   .right {
     height: 100%;
@@ -90,11 +100,16 @@ export default {
     padding: 0.3em 1em;
     display: flex;
     align-items: center;
-    // color: #;
-    // justify-content: center
+    cursor: pointer;
+    &:hover{
+      background-color: $grey;
+    }
+    .name{
+      margin-right: 1em;
+    }
     .g-icon {
-      margin-left: 1em;
-      transform: scale(0.7);
+      margin-left: auto;
+      transform: scale(0.5);
       color: $border-color-light;
     }
   }
