@@ -1,11 +1,12 @@
-const expect = chai.expect;
+import chai,{expect} from 'chai'
+import sinon from 'sinon'
+sinonChai=require("sinon-chai")
+chai.use(sinonChai)
 import Vue from "vue";
-import Button from "../src/button/button";
+import Button from "@/button/button.vue";
 
-Vue.config.productionTip = false;
-Vue.config.devtools = false;
 
-describe("Button", () => {
+describe("Button.vue", () => {
 //BDD行为驱动测试 Mocha
 
   it("存在.", () => {

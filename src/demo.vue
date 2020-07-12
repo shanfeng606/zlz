@@ -7,11 +7,13 @@
       :selected.sync="selected"
       :load-data="loadData"
     ></g-cascader>
+    <g-button>asdasd</g-button>
   </div>
 </template>
 
 <script>
 import Cascader from "./cascader";
+import Button from "./button/button"
 import db from "./db";
 
 function ajax(parentId = 0) {
@@ -33,7 +35,8 @@ function ajax(parentId = 0) {
 export default {
   name: "demo",
   components: {
-    "g-cascader": Cascader
+    "g-cascader": Cascader,
+    "g-button":Button
   },
   data() {
     return {

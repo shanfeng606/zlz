@@ -6,7 +6,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "test": "vue-cli-service test:unit"
+
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -20,6 +22,8 @@
     "chai": "^4.1.2",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
+    "sinon": "^9.0.2",
+    "sinon-chai": "^3.5.0",
     "vue-template-compiler": "^2.6.11"
   },
   "browserslist": [
