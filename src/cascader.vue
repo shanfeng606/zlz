@@ -7,6 +7,7 @@
         :height="popoverHeight"
         :selected="selected"
         :loadData="loadData"
+        :loading-item="loadingItem"
         @update:selected="onUpdateSelected"
       ></cascader-items>
     </div>
@@ -15,12 +16,12 @@
 
 <script>
 import CascaderItems from "./cascader-items";
-import ClickOutside from './click-outside'
+import ClickOutside from "./click-outside";
 
 export default {
   name: "zlzCascader",
   components: { CascaderItems },
-  directives:{ClickOutside},
+  directives: { ClickOutside },
   props: {
     source: {
       type: Array
@@ -40,7 +41,8 @@ export default {
   },
   data() {
     return {
-      popoverVisible: false
+      popoverVisible: false,
+      loadingItem: {}
     };
   },
   methods: {
@@ -57,7 +59,6 @@ export default {
     close() {
       this.popoverVisible = false;
       // document.removeEventListener("click",this.onClickDocument)
-
     },
     toggle() {
       if (this.popoverVisible == true) {
@@ -103,13 +104,15 @@ export default {
       };
 
       let updateSource = result => {
+        this.loadingItem={}
         let copy = JSON.parse(JSON.stringify(this.source));
         let toUpdate = complex(copy, lastItem.id);
         toUpdate.children = result;
         this.$emit("update:source", copy);
       };
-      if (!lastItem.isLeaf) {
-        this.loadData && this.loadData(lastItem, updateSource);
+      if (!lastItem.isLeaf && this.loadData) {
+        this.loadData(lastItem, updateSource);
+        this.loadingItem = lastItem;
       }
     }
   },
@@ -145,6 +148,7 @@ export default {
     left: 0;
     background: white;
     display: flex;
+    z-index: 1;
     .label {
       white-space: nowrap;
     }

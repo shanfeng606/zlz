@@ -3,7 +3,14 @@
     <div class="left">
       <div class="label" v-for="item in items" @click="onClickLabel(item)">
         <span class="name">{{item.name}}</span>
-        <icon v-if="rightArrowVisible(item)" name="right"></icon>
+        <span class="icons">
+          <template v-if="item.name===loadingItem.name">
+            <icon class="loading" name="loading"></icon>
+          </template>
+          <template v-else>
+            <icon class="next" v-if="rightArrowVisible(item)" name="right"></icon>
+          </template>
+        </span>
       </div>
     </div>
     <div class="right" v-if="rightItems">
@@ -11,6 +18,7 @@
         :items="rightItems"
         :height="height"
         :selected="selected"
+        :load-data="loadData"
         @update:selected="onUpdateSelected"
         :level="level+1"
       ></zlz-cascader-items>
@@ -36,9 +44,12 @@ export default {
         return [];
       }
     },
-    loadData:{
-      type:Function
-
+    loadingItem: {
+      type: Object,
+      default: () => ({})
+    },
+    loadData: {
+      type: Function
     },
     level: {
       type: Number,
@@ -50,24 +61,29 @@ export default {
   },
   computed: {
     rightItems() {
-      if(this.selected[this.level]){
-        let selected =this.items.filter(item=>item.name===this.selected[this.level].name)
-        if(selected && selected[0].children && selected[0].children.length>0){
-          return selected[0].children
+      if (this.selected[this.level]) {
+        let selected = this.items.filter(
+          item => item.name === this.selected[this.level].name
+        );
+        if (
+          selected &&
+          selected[0].children &&
+          selected[0].children.length > 0
+        ) {
+          return selected[0].children;
         }
       }
-    },
-    
+    }
   },
   methods: {
-    rightArrowVisible(item){
-      return this.loadData?!item.isLeaf:item.children
+    rightArrowVisible(item) {
+      return this.loadData ? !item.isLeaf : item.children;
     },
     onClickLabel(item) {
       //深拷贝
       let copy = JSON.parse(JSON.stringify(this.selected));
       copy[this.level] = item;
-      copy.splice(this.level+1)
+      copy.splice(this.level + 1);
       this.$emit("update:selected", copy);
     },
     onUpdateSelected(newSelected) {
@@ -79,6 +95,7 @@ export default {
 
 <style scoped lang="scss">
 @import "var";
+
 .cascaderItem {
   display: flex;
   align-items: flex-start;
@@ -88,7 +105,7 @@ export default {
     height: 100%;
     box-sizing: border-box;
     padding: 0.3em 0;
-    overflow:auto;
+    overflow: auto;
     // overflow-y:hidden;
   }
   .right {
@@ -102,16 +119,21 @@ export default {
     align-items: center;
     white-space: nowrap;
     cursor: pointer;
-    &:hover{
+    &:hover {
       background-color: $grey;
     }
-    .name{
+    .name {
       margin-right: 1em;
     }
-    .g-icon {
+    .icons {
       margin-left: auto;
-      transform: scale(0.5);
-      color: $border-color-light;
+      .next {
+        transform: scale(0.5);
+        fill:$border-color;
+      }
+      .loading {
+        animation: spin 2s infinite linear;
+      }
     }
   }
 }
