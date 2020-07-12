@@ -12,7 +12,7 @@ describe('Popover', () => {
     expect(Popover).to.exist
   })
 
-  xit('可以设置position.', () => {
+  it('可以设置position.', () => {
     const wrapper = mount(Popover, {
       slots: {
         default: {template: `<button>点我</button>`},
@@ -26,7 +26,7 @@ describe('Popover', () => {
     let classes = wrapper.find('.content-wrapper').classes()
     expect(classes).to.include('position-bottom')
   })
-  xit('可以设置 trigger', () => {
+  it('可以设置 trigger', () => {
     const wrapper = mount(Popover, {
       slots: {
         default: {template: `<button>点我</button>`},

@@ -38,20 +38,20 @@ export default {
 
 <style lang="scss" scoped>
 // @import "./src/var.scss";
-// @import "../var";
-$border-color-hover:#666;
-$border-color:#999;
-$border-color-light:lighten($border-color,10%);
-$border-radius:4px;
-$box-shadow-color: rgba(0, 0, 0, 0.5);
-$button-active-bg:#eee;
-$button-bg:white;
-$button-height:32px;
-$color:#333;
-$font-size:14px;
-$height: 32px;
-$red: #f1453d;
-$grey:#eee;
+@import "../var";
+// $border-color-hover:#666;
+// $border-color:#999;
+// $border-color-light:lighten($border-color,10%);
+// $border-radius:4px;
+// $box-shadow-color: rgba(0, 0, 0, 0.5);
+// $button-active-bg:#eee;
+// $button-bg:white;
+// $button-height:32px;
+// $color:#333;
+// $font-size:14px;
+// $height: 32px;
+// $red: #f1453d;
+// $grey:#eee;
 
 
 
