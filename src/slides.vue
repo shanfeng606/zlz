@@ -6,7 +6,9 @@
       </div>
     </div>
     <div class="g-slides-dots">
-      <span v-for="n in childrenLength" :class="{active:select}" @click="select(n-1)">{{n}}</span>
+      <span v-for="n in childrenLength" 
+      :class="{active: selectedIndex === n-1}" 
+      @click="select(n-1)">{{n}}</span>
     </div>
   </div>
 </template>
@@ -98,21 +100,22 @@ export default {
     updateChildren() {
       let selected = this.getSelected();
       this.$children.forEach(vm => {
-        let reverse = this.selectedIndex > this.lastSelectedIndex ? false : true;
-
-        if (
-          this.lastSelectedIndex === this.items.length - 1 &&
-          this.selectedIndex === 0
-        ) {
-          reverse = false;
+        let reverse =
+          this.selectedIndex > this.lastSelectedIndex ? false : true;
+        if (this.timerId) {
+          if (
+            this.lastSelectedIndex === this.items.length - 1 &&
+            this.selectedIndex === 0
+          ) {
+            reverse = false;
+          }
+          if (
+            this.lastSelectedIndex === 0 &&
+            this.selectedIndex === this.items.length - 1
+          ) {
+            reverse = true;
+          }
         }
-        if (
-          this.lastSelectedIndex === 0 &&
-          this.selectedIndex === this.items.length - 1
-        ) {
-          reverse = true;
-        }
-
         vm.reverse = reverse;
         this.$nextTick(() => {
           vm.selected = selected;
@@ -132,5 +135,33 @@ export default {
   &-wrapper {
     position: relative;
   }
+  &-dots {
+      padding: 8px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > span {
+        width: 20px;
+        height: 20px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background: #ddd;
+        border-radius: 50%;
+        margin: 0 8px;
+        font-size: 12px;
+        &:hover {
+          cursor: pointer;
+        }
+        &.active {
+          background: black;
+          color: white;
+          &:hover {
+            cursor: default;
+          }
+        }
+      }
+    }
+
 }
 </style>
