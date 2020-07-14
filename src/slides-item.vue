@@ -17,7 +17,7 @@
 
 <script>
   export default {
-    name: 'GuluSlidesItem',
+    name: 'ZlzSlidesItem',
     props: {
       name: {
         type: String,
