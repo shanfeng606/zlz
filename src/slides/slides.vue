@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Icon from "./icon";
+import Icon from "../icon";
 
 export default {
   // name:GSlides
@@ -40,7 +40,11 @@ export default {
     autoPlay: {
       type: Boolean,
       default: true
-    }
+    },
+    autoPlayDelay:{
+        type: Number,
+        default: 3000
+      }
   },
 
   data() {
@@ -127,9 +131,9 @@ export default {
         let index = this.names.indexOf(this.getSelected());
         let newIndex = index + 1;
         this.select(newIndex);
-        this.timerId = setTimeout(run, 2000);
+        this.timerId = setTimeout(run, this.autoPlayDelay);
       };
-      this.timerId = setTimeout(run, 2000);
+      this.timerId = setTimeout(run, this.autoPlayDelay);
     },
     pause() {
       window.clearTimeout(this.timerId);
