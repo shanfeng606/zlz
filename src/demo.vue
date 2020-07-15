@@ -1,44 +1,27 @@
 <template>
   <div>
-    <g-slides width="300px" height="200px" :selected.sync="selected">
-      <g-slides-item name="1">
-        <div class="box">1</div>
-      </g-slides-item>
-
-      <g-slides-item name="2">
-        <div class="box">2</div>
-      </g-slides-item>
-
-      <g-slides-item name="3">
-        <div class="box">3</div>
-      </g-slides-item>
-    </g-slides>
+    <g-nav :selected.sync="selected" :multiple="false">
+      <g-nav-item name="home">首页</g-nav-item>
+      <g-nav-item name="about">关于</g-nav-item>
+      <g-nav-item name="hire">招聘</g-nav-item>
+    </g-nav>
   </div>
 </template>
 
 <script>
-import GSlides from "./slides/slides";
-import GSlidesItem from "./slides/slides-item";
+import GNav from "./nav/nav";
+import GNavItem from "./nav/nav-item";
+import GSubNav from "./nav/sub-nav";
 
 export default {
   name: "demo",
-  data(){
-    return{
-      selected:'3'
-    }
+  data() {
+    return {
+      selected: ["home"]
+    };
   },
-  components: { GSlides, GSlidesItem },
-  created(){
-    // let n=1
-    // setInterval(()=>{
-    //   if(n===4){
-    //     n=1
-    //   }
-    //   this.selected=n.toString()
-    //   n++
-    // },3000)
-  }
-
+  components: { GNav, GNavItem, GSubNav },
+  created() {}
 };
 </script>
 <style scoped lang='scss'>
@@ -46,16 +29,5 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-.box {
-  width: 100%;
-  height: 350px;
-  background: #ddd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  
-  // border: 1px solid red;
 }
 </style>
