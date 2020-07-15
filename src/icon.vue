@@ -4,7 +4,9 @@
   </svg>
 </template>
 <script>
-import "./svg";
+// import "./svg";
+// import {svg} from '//at.alicdn.com/t/font_1878994_ctgjepvebk7.js'
+
 export default {
   name: "zlzIcon",
   props: ["name"]
