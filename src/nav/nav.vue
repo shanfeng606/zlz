@@ -7,6 +7,18 @@
 <script>
 export default {
   name: "ZlzNav",
+  provide() {
+    return {
+      root: this
+      // vertical: this.vertical
+    };
+  },
+  data() {
+    return {
+      items: []
+      // namePath: []
+    };
+  },
   props: {
     selected: {
       type: Array,
@@ -22,15 +34,14 @@ export default {
     this.updateChildren();
     this.listenToChildren();
   },
-  computed: {
-    items() {
-      return this.$children.filter(vm => vm.$options.name === "ZlzNavItem");
-    }
-  },
+  
   updated() {
     this.updateChildren();
   },
   methods: {
+     addItem (vm) {
+        this.items.push(vm)
+      }, 
     updateChildren() {
       this.items.forEach(vm => {
         if (this.selected.indexOf(vm.name) >= 0) {

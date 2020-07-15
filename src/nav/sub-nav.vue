@@ -1,15 +1,88 @@
 <template>
-   <div>
+  <div class="g-sub-nav">
+    <span @click="onClick">
+      <slot name="title"></slot>
+    </span>
+    <div class="g-sub-nav-popover" v-show="open">
       <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    name:"ZlzSubNav"
-}
+  name: "ZlzSubNav",
+  props: {
+    name: {
+      type: String,
+    }
+  },
+  data() {
+    return {
+      open: false
+    };
+  },
+  methods: {
+    onClick() {
+      this.open = !this.open;
+    }
+  }
+};
 </script>
 
 <style scoped lang="scss">
+@import "var";
 
+.g-sub-nav {
+  position: relative;
+>span{
+  padding: 10px 20px;
+  display: block;
+}
+  &-popover {
+    transition: height 250ms;
+    background: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    white-space: nowrap;
+    box-shadow: 0 0 3px fade_out(black, 0.8);
+    border-radius: $border-radius;
+    font-size: $font-size;
+    // color: $light-color;
+    min-width: 8em;
+  }
+  .g-sub-nav{
+    &.active {
+      &::after {
+        display: none;
+      }
+    }
+    .g-sub-nav-popover {
+    top: 0;
+    left: 100%;
+    margin-left: 8px;
+    }
+    .g-sub-nav-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    // .g-sub-nav-icon {
+    //   transition: transform 250ms;
+    //   display: inline-flex; margin-left: 1em;
+    // //   svg {fill: $light-color;}
+    //   &.vertical {
+    //     transform: rotate(90deg);
+    //     &.open {
+    //       transform: rotate(270deg);
+    //     }
+    //   }
+    //   &.open {
+    //     transform: rotate(180deg);
+    //   }
+    // }
+  }
+}
 </style>
