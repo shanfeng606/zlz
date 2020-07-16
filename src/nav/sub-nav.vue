@@ -2,7 +2,7 @@
   <div class="g-sub-nav" :class="{active,vertical}" v-click-outside="close">
     <span class="g-sub-nav-label" @click="onClick">
       <slot name="title"></slot>
-      <span class="g-sub-nav-icon" :class="{open}">
+      <span class="g-sub-nav-icon" :class="{open,vertical}">
         <g-icon name="right"></g-icon>
       </span>
     </span>
@@ -96,7 +96,7 @@ export default {
 
 .g-sub-nav {
   position: relative;
-  & {
+  &:not(.vertical){
     &.active {
       &::after {
         content: "";
@@ -159,6 +159,12 @@ export default {
       display: inline-flex;
       svg {
         fill: $light-color;
+      }
+      &.vertical{
+        transform: rotate(90deg);
+        &.open{
+          transform: rotate(270deg);
+        }
       }
       &.open {
         transform: rotate(180deg);

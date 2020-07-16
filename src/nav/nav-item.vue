@@ -7,7 +7,7 @@
 <script>
 export default {
   name: "ZlzNavItem",
-  inject: ["root"],
+  inject: ["root", "vertical"],
   props: {
     name: {
       type: String,
@@ -24,8 +24,8 @@ export default {
   },
   methods: {
     onClick() {
-      this.root.namePath = []
-      this.$parent.updateNamePath && this.$parent.updateNamePath()
+      this.root.namePath = [];
+      this.$parent.updateNamePath && this.$parent.updateNamePath();
       this.$emit("update:selected", this.name);
     }
   }
@@ -38,26 +38,37 @@ export default {
 .g-nav-item {
   padding: 10px 20px;
   position: relative;
-  &.selected {
-    &::after {
-      content:'';
-      position:absolute;
-      bottom: 0;
-      left: 0;
-      border-bottom: 2px solid $blue;
-      width: 100%;
-      color: $color;
-    }
-  }
-}
-// 二级菜单样式-----------------------------
-.g-sub-nav .g-nav-item{
-    &.selected {
-      color: $color;
-      background: $grey;
+  &:not(.vertical) {
+    &.active {
       &::after {
-        display: none;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid $blue;
+        width: 100%;
+        color: $color;
       }
     }
   }
+  &.vertical{
+    &.selected{
+      color:$blue
+    }
+  }
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+// 二级菜单样式-----------------------------
+.g-sub-nav .g-nav-item:not(.vertical) {
+  &.selected {
+    color: $color;
+    background: $grey;
+    &::after {
+      display: none;
+    }
+  }
+}
 </style>
