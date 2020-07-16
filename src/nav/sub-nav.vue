@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "var";
+@import "../var";
 
 .g-sub-nav {
   position: relative;
@@ -50,7 +50,7 @@ export default {
     box-shadow: 0 0 3px fade_out(black, 0.8);
     border-radius: $border-radius;
     font-size: $font-size;
-    // color: $light-color;
+    color: $light-color;
     min-width: 8em;
   }
   .g-sub-nav{

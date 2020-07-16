@@ -34,14 +34,14 @@ export default {
     this.updateChildren();
     this.listenToChildren();
   },
-  
+
   updated() {
     this.updateChildren();
   },
   methods: {
-     addItem (vm) {
-        this.items.push(vm)
-      }, 
+    addItem(vm) {
+      this.items.push(vm);
+    },
     updateChildren() {
       this.items.forEach(vm => {
         if (this.selected.indexOf(vm.name) >= 0) {
@@ -71,8 +71,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../var";
 .g-nav {
   display: flex;
-  border: 1px solid red;
+  border-bottom: 1px solid $grey;
+  // color: $color;
+  cursor: default;
+  user-select: none;
 }
 </style>
