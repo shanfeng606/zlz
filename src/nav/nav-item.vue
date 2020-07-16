@@ -24,8 +24,8 @@ export default {
   },
   methods: {
     onClick() {
-      // this.root.namePath = []
-      // this.$parent.updateNamePath && this.$parent.updateNamePath()
+      this.root.namePath = []
+      this.$parent.updateNamePath && this.$parent.updateNamePath()
       this.$emit("update:selected", this.name);
     }
   }
@@ -46,6 +46,7 @@ export default {
       left: 0;
       border-bottom: 2px solid $blue;
       width: 100%;
+      color: $color;
     }
   }
 }

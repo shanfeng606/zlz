@@ -1,5 +1,5 @@
 <template>
-  <div class="g-nav">
+  <div class="g-nav" :class="{vertical}">
     <slot></slot>
   </div>
 </template>
@@ -9,14 +9,14 @@ export default {
   name: "ZlzNav",
   provide() {
     return {
-      root: this
-      // vertical: this.vertical
+      root: this,
+      vertical: this.vertical
     };
   },
   data() {
     return {
-      items: []
-      // namePath: []
+      items: [],
+      namePath: []
     };
   },
   props: {
@@ -24,7 +24,7 @@ export default {
       type: Array,
       default: () => []
     },
-    multiple: {
+    vertical: {
       type: Boolean,
       default: false
     }
@@ -75,8 +75,12 @@ export default {
 .g-nav {
   display: flex;
   border-bottom: 1px solid $grey;
-  // color: $color;
+  color: $color;
   cursor: default;
   user-select: none;
+  &.vertical {
+    flex-direction: column;
+    border: 1px solid $grey;
+  }
 }
 </style>
