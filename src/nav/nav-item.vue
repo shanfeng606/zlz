@@ -39,7 +39,7 @@ export default {
   padding: 10px 20px;
   position: relative;
   &:not(.vertical) {
-    &.active {
+    &.selected {
       &::after {
         content: "";
         position: absolute;

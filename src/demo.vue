@@ -1,6 +1,6 @@
 <template>
   <div>
-    <g-nav :selected.sync="selected" vertical>
+    <g-nav :selected.sync="selected" >
       <g-nav-item name="home">首页</g-nav-item>
       <g-sub-nav name="about">
         <template slot="title">关于</template>
@@ -34,7 +34,7 @@ export default {
   name: "demo",
   data() {
     return {
-      selected: ["home"]
+      selected: "home"
     };
   },
   components: { GNav, GNavItem, GSubNav },
